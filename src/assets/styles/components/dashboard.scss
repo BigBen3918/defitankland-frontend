@@ -1,0 +1,150 @@
+.dashboard {
+    .intro {
+        position: relative;
+
+        .back_effect {
+            video {
+                display: block;
+                width: 100%;
+            }
+
+            div {
+                display: none;
+                width: 100%;
+                min-height: 500px;
+                background-image: url("../../images/video_back.png");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position-x: 30%;
+            }
+
+            @media screen and (max-width: 992px) {
+                video {
+                    display: none;
+                }
+
+                div {
+                    display: block;
+                }
+            }
+        }
+
+        .title {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: var(--font-secondary);
+
+            h1 {
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+
+            @media screen and (max-width: 992px) {
+                top: 50%;
+
+                h1 {
+                    font-size: 50px;
+                }
+            }
+
+            @media screen and (max-width: 768px) {
+                top: 50%;
+
+                h1 {
+                    font-size: 40px;
+                }
+
+                h3 {
+                    font-size: 20px;
+                }
+            }
+
+            @media screen and (max-width: 350px) {
+                h1 {
+                    font-size: 10vw;
+                }
+
+                h3 {
+                    font-size: 5vw;
+                }
+            }
+        }
+    }
+
+    .tokenomic {
+        background-image: url("../../images/bg-1.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position-x: 30%;
+        background-attachment: fixed;
+
+        > div {
+            padding: 20px;
+
+            > div {
+                h2 {
+                    color: var(--font-primary);
+                    text-transform: uppercase;
+                }
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .allocation {
+        > div {
+            h2 {
+                color: var(--font-primary);
+                text-align: center;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .roadmap {
+        background-image: url("../../images/bg-2.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position-x: 30%;
+        background-attachment: fixed;
+
+        > div {
+            h2 {
+                color: var(--font-secondary);
+                text-align: center;
+            }
+
+            .tab {
+                position: relative;
+                background-color: var(--bg-primary);
+                padding: 30px;
+                border-radius: 10px;
+                margin-bottom: 10px;
+
+                span {
+                    position: absolute;
+                    top: 35px;
+                    left: -25px;
+                    background-color: var(--bg-primary);
+                    padding: 15px 5px;
+                    border-radius: 50%;
+
+                    b {
+                        background-color: var(--font-primary);
+                        padding: 10px 15px;
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+    }
+}

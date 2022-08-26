@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
     BrowserRouter as Router,
     Routes,
@@ -15,11 +16,12 @@ import Notfound from "./pages/notfound";
 
 // Layouts
 import Header from "./components/layouts/header";
+import Footer from "./components/layouts/footer";
 /** ---------- End Pages ---------- */
 
-/** Begin CSS Style */
+/** Begin SCSS Style */
 import "./assets/styles/index.scss";
-/** End CSS Style */
+/** End SCSS Style */
 
 interface Props {
     component: React.ComponentType;
@@ -28,7 +30,7 @@ interface Props {
 
 const PrivateRoute: React.FC<Props> = ({ component: RouteComponent }) => {
     const location = useLocation();
-    const [state, { dispatch }]: any = useGlobalContext();
+    const [state]: any = useGlobalContext();
 
     if (!state.auth.isAuth) {
         return <Navigate to="/login" replace state={{ from: location }} />;
@@ -43,11 +45,11 @@ export default function App() {
             <Router>
                 <Header />
                 <Routes>
-                    {/* Auth Routes */}
+                    {/* Non Auth Routes */}
                     <Route path="/" element={<Navigate to={"/dashboard"} />} />
                     <Route path="/dashboard" element={<Home />} />
 
-                    {/* Private Routes */}
+                    {/* Auth Routes */}
                     <Route
                         path="/allnft"
                         element={<PrivateRoute component={Profile} />}
@@ -56,6 +58,7 @@ export default function App() {
                     {/* Other Routes */}
                     <Route path="*" element={<Notfound />} />
                 </Routes>
+                <Footer />
             </Router>
         </Provider>
     );

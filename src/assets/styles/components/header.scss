@@ -1,0 +1,46 @@
+.header {
+    display: flex;
+    position: fixed;
+    align-items: center;
+    background-image: url("../../images/bg_header.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    min-height: 120px;
+    width: 100%;
+    z-index: 99;
+
+    .logo {
+        position: absolute;
+        background-image: url("../../images/tanklogo.png");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        width: 200px;
+        height: 80px;
+        left: 50%;
+        top: 20px;
+        translate: calc(-50%);
+
+        @media screen and (max-width: 500px) {
+            width: 45vw;
+        }
+    }
+
+    h5 {
+        color: var(--font-white-color);
+    }
+
+    .container {
+        .menu {
+            display: none;
+        }
+
+        @media screen and (max-width: 768px) {
+            .menu {
+                display: block;
+            }
+            .row {
+                display: none;
+            }
+        }
+    }
+}
