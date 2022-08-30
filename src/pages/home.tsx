@@ -123,7 +123,7 @@ export default function Home() {
             <div className="roadmap">
                 <div className="container">
                     <span className="p3">
-                        <h2>RoadMap</h2>
+                        <h2>Play to Earn</h2>
                         {roadmapData.map((item: any, index: number) => (
                             <RoadmapTab
                                 title={item.title}
