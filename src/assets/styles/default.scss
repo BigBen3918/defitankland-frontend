@@ -33,12 +33,6 @@
 @mixin hide {
     display: none !important;
 }
-@mixin white-color {
-    color: var(--font-white-color);
-}
-@mixin dark-color {
-    color: var(--font-dark-color);
-}
 
 * {
     box-sizing: border-box;
@@ -1136,7 +1130,7 @@ textarea.disabled {
         padding-left: 0.5rem;
     }
 }
-@media (max-width: 1280px) {
+@media (max-width: 1299px) {
     h1,
     .h1 {
         font-weight: bolder;

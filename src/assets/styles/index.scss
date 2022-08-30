@@ -1,5 +1,6 @@
 @import "default.scss";
 @import "components/header.scss";
+@import "components/footer.scss";
 @import "components/dashboard.scss";
 
 /** ---------- Custom Style ---------- */
@@ -10,6 +11,27 @@ p {
 
 .text-white {
     color: var(--font-white-color);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background: var(--bg-secondary);
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+    box-shadow: inset 0 0 5px var(--bg-primary);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #f5bb2a;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #b48e2e80;
 }
 
 /** ---------- Space Style ---------- */

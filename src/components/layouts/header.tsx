@@ -8,7 +8,7 @@ export default function Header() {
                 <div className="menu">
                     <button>menu</button>
                 </div>
-                <div className="row text-center">
+                <div className="row m0 text-center">
                     <div className="col-2">
                         <Link to="">
                             <h5>Tokenomics</h5>
