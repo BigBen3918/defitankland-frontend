@@ -264,7 +264,7 @@
             }
 
             .tab {
-                @include block;
+                display: block;
                 position: relative;
                 background: var(--bg-primary);
                 padding: 30px;
@@ -288,7 +288,7 @@
                 }
 
                 .hide {
-                    @include hide;
+                    display: none;
                 }
             }
         }
