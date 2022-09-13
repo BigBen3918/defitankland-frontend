@@ -39,6 +39,11 @@
                 color: var(--font-primary);
                 background-color: var(--bg-secondary);
                 border-radius: 0 20px 20px 0;
+                cursor: pointer;
+
+                &:hover {
+                    color: var(--font-white-color);
+                }
             }
 
             @media screen and (max-width: 992px) {

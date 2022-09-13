@@ -236,6 +236,16 @@
                     transform: translateX(-50%);
                     color: white;
                 }
+
+                &::before {
+                    position: absolute;
+                    content: url("../../images/arrow.png");
+                    width: 50px;
+
+                    @media screen and (max-width: 768px) {
+                        display: none;
+                    }
+                }
             }
 
             .even {
@@ -260,6 +270,54 @@
                             transparent 60%
                         )
                         border-box;
+            }
+
+            .count0 {
+                &::before {
+                    top: 50%;
+                    right: -20px;
+                    transform: scale(0.6) translateY(-50%);
+                }
+            }
+
+            .count1 {
+                &::before {
+                    top: 50%;
+                    right: -20px;
+                    transform: scale(0.6) translateY(-50%);
+                }
+            }
+
+            .count2 {
+                &::before {
+                    bottom: -20px;
+                    left: 50%;
+                    transform: scale(0.6) translateX(-70%) rotate(90deg);
+                }
+            }
+
+            .count3 {
+                &::before {
+                    top: 50%;
+                    left: -70px;
+                    transform: scale(0.6) translateY(-50%);
+                }
+            }
+
+            .count4 {
+                &::before {
+                    top: -50px;
+                    left: 50%;
+                    transform: scale(0.6) translateX(-70%) rotate(-90deg);
+                }
+            }
+
+            .count5 {
+                &::before {
+                    top: 50%;
+                    left: -70px;
+                    transform: scale(0.6) translateY(-50%);
+                }
             }
         }
 

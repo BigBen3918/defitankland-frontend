@@ -1,6 +1,7 @@
 import { useLayoutEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { BsFillGridFill, BsXLg } from "react-icons/bs";
+import { ScrollLink } from "../ScrollEvent";
 
 export default function Header() {
     const [isMobile, setIsMobile] = useState(false);
@@ -27,7 +28,9 @@ export default function Header() {
                                 </p>
                             </div>
                             <div className="col-4">
-                                <span className="logo"></span>
+                                <Link to="/dashboard">
+                                    <span className="logo"></span>
+                                </Link>
                             </div>
                             <div className="col-4">
                                 <a href="/#" className="sub__button">
@@ -40,26 +43,30 @@ export default function Header() {
                             <div className="col-4">
                                 <div className="row text-right j-center">
                                     <div className="col-6">
-                                        <Link to="">
-                                            <p>How It Work</p>
-                                        </Link>
+                                        <ScrollLink to="howitwork">
+                                            <Link to="/dashboard">
+                                                <p>How It Work</p>
+                                            </Link>
+                                        </ScrollLink>
                                     </div>
                                     <div className="col-6">
-                                        <Link to="">
+                                        <Link to="/dftl">
                                             <p>DFTL</p>
                                         </Link>
                                     </div>
                                 </div>
                             </div>
                             <div className="col-4">
-                                <span className="logo"></span>
+                                <Link to="/dashboard">
+                                    <span className="logo"></span>
+                                </Link>
                             </div>
                             <div className="col-4 pr0">
                                 <div className="row m0 j-center j-middle">
                                     <div className="col-6">
-                                        <Link to="">
+                                        <a href="/#">
                                             <p>Whitepaper</p>
-                                        </Link>
+                                        </a>
                                     </div>
                                     <div className="col-6 pr0">
                                         <a href="/#">
@@ -92,19 +99,28 @@ const MenuItem = (props: any) => {
                     </button>
                 </li>
                 <li>
-                    <h2>Home</h2>
+                    <ScrollLink to="howitwork">
+                        <Link to={"/dashboard"}>
+                            <h2 onClick={() => setShowMenu(false)}>
+                                How It Work
+                            </h2>
+                        </Link>
+                    </ScrollLink>
                 </li>
                 <li>
-                    <h2>How It Work</h2>
+                    <Link to="/dftl">
+                        <h2>DFTL</h2>
+                    </Link>
                 </li>
                 <li>
-                    <h2>DFTL</h2>
+                    <a href="/#">
+                        <h2>Whitepaper</h2>
+                    </a>
                 </li>
                 <li>
-                    <h2>Whitepaper</h2>
-                </li>
-                <li>
-                    <button>Launch App</button>
+                    <a href="/#">
+                        <button>Launch App</button>
+                    </a>
                 </li>
             </ul>
         </div>

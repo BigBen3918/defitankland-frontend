@@ -110,12 +110,15 @@
         text-align: center;
 
         li {
-            transition: 0.4s;
             cursor: pointer;
-        }
+            a {
+                color: white;
+                transition: 0.4s;
 
-        li:hover {
-            color: var(--font-primary);
+                &:hover {
+                    color: var(--font-primary);
+                }
+            }
         }
 
         li:first-child {

@@ -28,6 +28,6 @@ export const howWork = [
     },
     {
         image: card6,
-        content: "Token Price",
+        content: "Provide staking pool",
     },
 ];
