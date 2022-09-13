@@ -1,0 +1,13 @@
+/** ----- Introduce ----- */
+@mixin title__hover {
+    background: -webkit-linear-gradient(
+        96.41deg,
+        #ffa100 11%,
+        #ffd970 44.81%,
+        #ff9c00 96.56%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-filter: drop-shadow(0 0 3px #ffa100);
+    filter: drop-shadow(0 0 5px #ffa100);
+}

@@ -1,11 +1,12 @@
-@import "default.scss";
-@import "components/header.scss";
-@import "components/footer.scss";
-@import "components/dashboard.scss";
+@import "default";
+@import "components/mixins";
+@import "components/header";
+@import "components/footer";
+@import "components/dashboard";
 
 /** ---------- Custom Style ---------- */
 p {
-    line-height: 1.8rem;
+    line-height: 1.2rem;
     color: var(--font-white-color);
 }
 
@@ -27,11 +28,13 @@ p {
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: var(--bg-primary);
+    box-shadow: inset 0 0 5px var(--bg-secondary);
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--bg-secondary);
+    background: var(--bg-primary);
+    box-shadow: inset 0 0 5px var(--font-white-color);
 }
 
 /** ---------- Space Style ---------- */

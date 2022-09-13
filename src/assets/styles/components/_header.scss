@@ -1,0 +1,164 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 50px;
+    width: 100%;
+    z-index: 99;
+
+    > div {
+        border-radius: 100px;
+        position: relative;
+        background-color: var(--bg-primary);
+        box-shadow: 0 3px 5px black;
+        padding: 0 3px;
+
+        .logo {
+            position: absolute;
+            background-image: url("../../images/tanklogo.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            width: 220px;
+            height: 100px;
+            left: 50%;
+            top: -55px;
+            translate: calc(-50%);
+        }
+
+        p {
+            color: var(--font-secondary);
+            font-weight: bold;
+            transition: 0.3s ease-in-out;
+
+            &:hover {
+                color: var(--font-white-color);
+            }
+        }
+
+        button {
+            outline: 0;
+            border: 0;
+            width: 100%;
+            padding: 15px;
+            border-radius: 50px;
+            font-weight: bold;
+            background-color: var(--bg-secondary);
+            color: var(--font-primary);
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+
+            &:hover {
+                color: white;
+            }
+        }
+
+        a {
+            color: var(--font-primary);
+        }
+
+        @media screen and (max-width: 1299px) {
+            p {
+                font-size: 14px;
+            }
+
+            button {
+                padding: 13px;
+            }
+        }
+
+        @media screen and (max-width: 992px) {
+            p {
+                font-size: 30px;
+                padding: 10px;
+                margin: 0;
+                margin-left: 30%;
+                cursor: pointer;
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+            .logo {
+                top: -40px;
+                width: 150px;
+                height: 70px;
+            }
+
+            .sub__button {
+                display: none;
+            }
+        }
+    }
+}
+
+.menu__items {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    ul {
+        list-style-type: none;
+        color: var(--font-white-color);
+        padding: 20px;
+        text-align: center;
+
+        li {
+            transition: 0.4s;
+            cursor: pointer;
+        }
+
+        li:hover {
+            color: var(--font-primary);
+        }
+
+        li:first-child {
+            button {
+                display: block;
+                position: absolute;
+                top: 50px;
+                right: 10%;
+                outline: 0;
+                border: 0;
+                font-size: 20px;
+                font-weight: bold;
+                background-color: transparent;
+                color: var(--font-white-color);
+                cursor: pointer;
+
+                &:hover {
+                    color: var(--font-primary);
+                }
+            }
+        }
+
+        li:last-child {
+            button {
+                outline: 0;
+                border: 0;
+                width: 100%;
+                padding: 15px;
+                border-radius: 50px;
+                font-weight: bold;
+                background-color: var(--bg-primary);
+                color: var(--font-secondary);
+                cursor: pointer;
+                transition: 0.3s ease-in-out;
+
+                &:hover {
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+.hidden {
+    display: none;
+}

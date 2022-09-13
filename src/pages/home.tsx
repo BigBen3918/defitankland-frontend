@@ -2,9 +2,10 @@ import RoadmapTab from "../components/roadmap";
 import HowWork from "../components/howwork";
 import roadmapData from "../components/mocks/roadmpa.json";
 import { howWork } from "../components/mocks/howwork";
+import { ScrollLink, ScrollElement } from "../components/ScrollEvent";
 
 // images
-import introVideo from "../assets/video/intro.webm";
+import btnScroll from "../assets/images/scrollbutton.png";
 import item1 from "../assets/images/item1.png";
 import item2 from "../assets/images/item2.png";
 import item3 from "../assets/images/item3.png";
@@ -14,102 +15,64 @@ export default function Home() {
     return (
         <div className="dashboard">
             {/* Begin Intro Video */}
-            <div className="intro">
-                <div className="back__effect">
-                    <video autoPlay loop muted>
-                        <source src={introVideo} type="video/webm" />
-                    </video>
-                    <div></div>
-                </div>
+            <ScrollElement to="introduce">
+                <div className="intro">
+                    <div className="back__effect">
+                        <div>
+                            <h1>DefiTankLand</h1>
+                            <div>
+                                <h3>
+                                    Competing against players around the world
+                                    with NFT tanks
+                                </h3>
+                            </div>
+                        </div>
 
-                <div className="title">
-                    <h1>DefiTankLand</h1>
-                    <h3>
-                        Competing against players around the world with NFT
-                        tanks
-                    </h3>
+                        <span></span>
+                        <ScrollLink to="metrix">
+                            <button>
+                                <img src={btnScroll} alt="" />
+                            </button>
+                        </ScrollLink>
+                    </div>
                 </div>
-            </div>
+            </ScrollElement>
 
             {/* Begin Tokenomics */}
-            <div className="tokenomic">
-                <div className="container">
-                    <div className="spacer-double"></div>
-                    <div className="spacer-double"></div>
-                    <div className="row">
-                        <div className="col-sm-12 col-md-4">
-                            <h2>DefiTankLand Tokenomics</h2>
-                            <h4 className="text-white">
-                                $DFL is the governance token of Tank Battle. The
-                                total supply of $TBL is 1,000,000,000.
-                            </h4>
-                        </div>
-                        <div className="col-sm-12 col-md-8">
-                            <div className="row m0">
-                                <div className="col-sm-4">
-                                    <div className="item__1">
-                                        <img src={item1} alt="" />
-                                        <h4>1B</h4>
-                                        <p>Token total suply</p>
-                                    </div>
+            <ScrollElement to="metrix">
+                <div className="metrix">
+                    <div className="container">
+                        <span>
+                            <h2>Metrix</h2>
+                        </span>
+                        <div className="spacer-double"></div>
+                        <div className="row m0">
+                            <div className="col-sm-4">
+                                <div className="item__1">
+                                    <img src={item1} alt="" />
+                                    <h4>1B</h4>
+                                    <p>Token total suply</p>
                                 </div>
-                                <div className="col-sm-4">
-                                    <div className="item__2">
-                                        <img src={item2} alt="" />
-                                        <h4>4%</h4>
-                                        <p>Token initial liquid supply</p>
-                                    </div>
+                            </div>
+                            <div className="col-sm-4">
+                                <div className="item__2">
+                                    <img src={item2} alt="" />
+                                    <h4>4%</h4>
+                                    <p>Token initial liquid supply</p>
                                 </div>
-                                <div className="col-sm-4">
-                                    <div className="item__3">
-                                        <img src={item3} alt="" />
-                                        <h4>$TBL</h4>
-                                        <p>Game Token</p>
-                                    </div>
+                            </div>
+                            <div className="col-sm-4">
+                                <div className="item__3">
+                                    <img src={item3} alt="" />
+                                    <h4>$TBL</h4>
+                                    <p>Game Token</p>
                                 </div>
                             </div>
                         </div>
+                        <div className="spacer-single"></div>
                     </div>
-                    <div className="spacer-single"></div>
-                    <div className="row">
-                        <div className="col-sm-6">
-                            <div className="tab">
-                                <div className="row j-middle p2">
-                                    <div className="col-md-3">
-                                        <h3>Hunters</h3>
-                                    </div>
-                                    <div className="col-md-9">
-                                        <p>
-                                            Tank Battle's smart contracts
-                                            successfully audited by verichains
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-sm-6">
-                            <div className="tab">
-                                <div className="row j-middle p2">
-                                    <div className="col-md-3">
-                                        <h3>$DFL</h3>
-                                    </div>
-                                    <div className="col-md-9">
-                                        <p>
-                                            $DFL is the government token used
-                                            for trading NFTs and other
-                                            activities in the Tank Battle
-                                            ecosystem.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="spacer-double"></div>
-                    <div className="spacer-double"></div>
                 </div>
-            </div>
-
+            </ScrollElement>
             {/* Begin Allocation */}
             <div className="allocation">
                 <div className="container">
@@ -117,7 +80,6 @@ export default function Home() {
                     <img src={diagram} alt="" />
                 </div>
             </div>
-
             {/* Begin RoadMap */}
             <div className="roadmap">
                 <div className="container">
@@ -134,7 +96,6 @@ export default function Home() {
                     </span>
                 </div>
             </div>
-
             {/* Begin How Work */}
             <div className="how__work">
                 <div className="container">

@@ -1,104 +1,134 @@
 .dashboard {
     .intro {
-        position: relative;
-
         .back__effect {
-            video {
-                display: block;
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background-image: url("../../images/back_image.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position-x: 60%;
+
+            > div {
+                position: absolute;
+                top: 40%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                @include title__hover;
+
+                h1 {
+                    text-transform: uppercase;
+                    font-weight: bold;
+                }
+
+                @media screen and (max-width: 992px) {
+                    top: 50%;
+
+                    h1 {
+                        font-size: 50px;
+                    }
+                }
+
+                @media screen and (max-width: 768px) {
+                    top: 50%;
+
+                    h1 {
+                        font-size: 40px;
+                    }
+                }
+
+                @media screen and (max-width: 350px) {
+                    h1 {
+                        font-size: 10vw;
+                    }
+                }
+            }
+
+            span {
+                position: absolute;
+                bottom: 0;
                 width: 100%;
+                height: 200px;
+                background: linear-gradient(to top, #1e0500, transparent);
             }
 
-            div {
-                display: none;
-                width: 100%;
-                min-height: 500px;
-                background-image: url("../../images/video_back.png");
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position-x: 30%;
-            }
+            button {
+                background-color: transparent;
+                outline: 0;
+                border: 0;
+                position: absolute;
+                bottom: 150px;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                cursor: pointer;
 
-            @media screen and (max-width: 992px) {
-                video {
-                    display: none;
+                img {
+                    width: 30px;
+                    pointer-events: none;
+                    animation: scroll-button infinite 1.2s linear;
                 }
 
-                div {
-                    display: block;
-                }
-            }
-        }
-
-        .title {
-            position: absolute;
-            top: 40%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            color: var();
-            background: -webkit-linear-gradient(
-                96.41deg,
-                #2a2423 11%,
-                #1f1717 44.81%,
-                #2a2423 96.56%
-            );
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            -webkit-filter: drop-shadow(0 0 3px #2e2e2e);
-            filter: drop-shadow(0 0 5px #2e2e2e);
-
-            h1 {
-                text-transform: uppercase;
-                font-weight: bold;
-            }
-
-            @media screen and (max-width: 992px) {
-                top: 50%;
-
-                h1 {
-                    font-size: 50px;
-                }
-            }
-
-            @media screen and (max-width: 768px) {
-                top: 50%;
-
-                h1 {
-                    font-size: 40px;
-                }
-
-                h3 {
-                    font-size: 20px;
-                }
-            }
-
-            @media screen and (max-width: 350px) {
-                h1 {
-                    font-size: 10vw;
-                }
-
-                h3 {
-                    font-size: 5vw;
+                @keyframes scroll-button {
+                    0% {
+                        transform: translate(0, 0);
+                    }
+                    50% {
+                        transform: translate(0, 20px);
+                    }
+                    100% {
+                        transform: translate(0, 0);
+                    }
                 }
             }
         }
     }
 
-    .tokenomic {
+    .metrix {
         background-image: url("../../images/bg-1.png");
-        background-size: cover;
+        background-size: 100%;
         background-repeat: no-repeat;
-        background-position-x: 30%;
-        background-attachment: fixed;
+        background-position: 0 60%;
 
         > div {
             padding: 20px;
 
-            > div {
+            > span {
                 display: flex;
                 align-items: center;
                 justify-content: center;
 
+                h2 {
+                    @include title__hover;
+                    text-align: center;
+                    position: relative;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        bottom: -12px;
+                        left: 0;
+                        width: 100%;
+                        height: 1px;
+                        background-color: var(--bg-primary);
+                    }
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        bottom: -24px;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        height: 10px;
+                        width: 10px;
+                        border-radius: 50%;
+                        border: 1px solid var(--bg-primary);
+                        background: var(--bg-secondary);
+                    }
+                }
+            }
+
+            > div {
                 @mixin item__common {
                     border-radius: 10px;
                     transition: 0.4s all;
@@ -174,7 +204,6 @@
 
                 .tab {
                     width: 100%;
-                    background-image: url("../../images/tab.png");
                     background-size: 100% 100%;
                 }
 
