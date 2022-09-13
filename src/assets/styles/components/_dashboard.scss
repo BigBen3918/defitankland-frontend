@@ -177,14 +177,14 @@
             width: 150px;
             top: 5%;
             left: 10%;
-            animation: tank_icon infinite 3s linear;
+            animation: tank1_icon infinite 3s linear;
 
             @media screen and (max-width: 576px) {
                 display: none;
             }
         }
 
-        @keyframes tank_icon {
+        @keyframes tank1_icon {
             0% {
                 transform: translate(0, 0);
             }
@@ -269,14 +269,14 @@
             right: 10%;
             width: 150px;
 
-            animation: tank_icon infinite 3s linear;
+            animation: tank2_icon infinite 3s linear;
 
             @media screen and (max-width: 576px) {
                 display: none;
             }
         }
 
-        @keyframes tank_icon {
+        @keyframes tank2_icon {
             0% {
                 transform: translate(0, 0);
             }
