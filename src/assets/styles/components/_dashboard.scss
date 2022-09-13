@@ -85,10 +85,12 @@
     }
 
     .metrix {
+        position: relative;
         background-image: url("../../images/bg-1.png");
         background-size: 100%;
         background-repeat: no-repeat;
         background-position: 0 60%;
+        padding: 20px;
 
         > div {
             padding: 20px;
@@ -100,295 +102,222 @@
 
                 h2 {
                     @include title__hover;
-                    text-align: center;
-                    position: relative;
-
-                    &::before {
-                        content: "";
-                        position: absolute;
-                        bottom: -12px;
-                        left: 0;
-                        width: 100%;
-                        height: 1px;
-                        background-color: var(--bg-primary);
-                    }
-
-                    &::after {
-                        content: "";
-                        position: absolute;
-                        bottom: -24px;
-                        left: 50%;
-                        transform: translate(-50%, -50%);
-                        height: 10px;
-                        width: 10px;
-                        border-radius: 50%;
-                        border: 1px solid var(--bg-primary);
-                        background: var(--bg-secondary);
-                    }
+                    @include title__bar;
                 }
             }
 
-            > div {
-                @mixin item__common {
-                    border-radius: 10px;
-                    transition: 0.4s all;
-                    background-color: var(--font-primary);
-
-                    img {
-                        width: 100%;
-                        max-height: 450px;
-                    }
-
-                    h4 {
-                        position: absolute;
-                        left: 50%;
-                        top: 45%;
-                        transform: translate(-50%, -50%);
-                        font-size: 2vw;
-                        color: var(--font-primary);
-                        font-weight: bolder;
-                    }
-
-                    p {
-                        line-height: 15px;
-                        position: absolute;
-                        text-align: center;
-                        width: 100%;
-                        left: 50%;
-                        top: 75%;
-                        font-size: 1.2vw;
-                        transform: translate(-50%, -50%);
-                        color: var(--font-white-color);
-                    }
-
-                    @media screen and (max-width: 768px) {
-                        h4 {
-                            font-size: 3vw;
-                        }
-
-                        p {
-                            font-size: 2vw;
-                        }
-                    }
-
-                    @media screen and (max-width: 576px) {
-                        h4 {
-                            font-size: 10vw;
-                        }
-
-                        p {
-                            font-size: 7vw;
-                        }
-                    }
-
-                    &:hover {
-                        transform: translateY(-15px);
-                        box-shadow: 0 0 20px var(--font-primary);
-                    }
-                }
-
-                .item__1 {
-                    position: relative;
-                    @include item__common;
-                }
-
-                .item__2 {
-                    position: relative;
-                    @include item__common;
-                }
-
-                .item__3 {
-                    position: relative;
-                    @include item__common;
-                }
-
-                .tab {
-                    width: 100%;
-                    background-size: 100% 100%;
-                }
-
-                h2 {
-                    text-transform: uppercase;
-                    background: -webkit-linear-gradient(
-                        96.41deg,
-                        #ffa100 11%,
-                        #ffd970 44.81%,
-                        #ff9c00 96.56%
-                    );
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                    -webkit-filter: drop-shadow(0 0 3px #ffa100);
-                    filter: drop-shadow(0 0 5px #ffa100);
-                }
-
-                @media screen and(max-width: 992px) {
-                    h2 {
-                        font-size: 30px;
-                    }
-
-                    h4 {
-                        font-size: 15px;
-                    }
-                }
-
-                @media screen and(max-width: 768px) {
-                    text-align: center;
-                    h2 {
-                        font-size: 7vw;
-                    }
-
-                    h4 {
-                        font-size: 3vw;
-                    }
-                }
-            }
-        }
-    }
-
-    .allocation {
-        > div {
-            h2 {
-                text-align: center;
-                background: -webkit-linear-gradient(
-                    96.41deg,
-                    #ffa100 11%,
-                    #ffd970 44.81%,
-                    #ff9c00 96.56%
+            @mixin item__common(
+                $position,
+                $font_color,
+                $gradient_direct,
+                $other
+            ) {
+                border-radius: 20px;
+                padding: 5px;
+                background: linear-gradient(
+                    $gradient_direct,
+                    $font_color,
+                    transparent 50%
                 );
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                -webkit-filter: drop-shadow(0 0 3px #ffa100);
-                filter: drop-shadow(0 0 5px #ffa100);
+
+                div {
+                    position: relative;
+                    background: var(--bg-secondary);
+                    border-radius: 20px;
+                    width: 100%;
+                    height: 250px;
+
+                    > span {
+                        position: absolute;
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        #{$position}: 20px;
+                        #{$other}: unset;
+                        left: 50%;
+                        transform: translateX(-50%);
+
+                        p {
+                            color: white;
+                        }
+
+                        h3 {
+                            color: $font_color;
+                        }
+                    }
+                }
             }
 
-            img {
-                width: 100%;
+            .item__container {
+                @include item__common(
+                    bottom,
+                    var(--font-primary),
+                    to top,
+                    right
+                );
+            }
+
+            .item__container__reverse {
+                @include item__common(top, var(--font-third), to bottom, right);
+
+                @media screen and (max-width: 576px) {
+                    @include item__common(
+                        bottom,
+                        var(--font-third),
+                        to top,
+                        top
+                    );
+                }
+            }
+        }
+
+        > img {
+            position: absolute;
+            width: 150px;
+            top: 5%;
+            left: 10%;
+            animation: tank_icon infinite 3s linear;
+
+            @media screen and (max-width: 576px) {
+                display: none;
+            }
+        }
+
+        @keyframes tank_icon {
+            0% {
+                transform: translate(0, 0);
+            }
+            50% {
+                transform: translate(30px, 20px);
+            }
+            100% {
+                transform: translate(0, 0);
             }
         }
     }
 
-    .roadmap {
+    .howitwork {
         background-image: url("../../images/bg-2.png");
         background-size: cover;
         background-repeat: no-repeat;
-        background-position-x: 30%;
-        background-attachment: fixed;
+        position: relative;
         padding: 20px;
 
         > div {
-            h2 {
-                text-align: center;
-                text-transform: uppercase;
-                font-weight: bold;
-                background: -webkit-linear-gradient(
-                    96.41deg,
-                    #ffa100 11%,
-                    #ffd970 44.81%,
-                    #ff9c00 96.56%
-                );
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                -webkit-filter: drop-shadow(0 0 3px #ffa100);
-                filter: drop-shadow(0 0 5px #ffa100);
+            > span {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                h2 {
+                    @include title__hover;
+                    @include title__bar;
+                }
             }
 
-            .tab {
-                display: block;
+            .how {
                 position: relative;
-                background: var(--bg-primary);
-                padding: 30px;
-                border-radius: 10px;
-                margin-bottom: 10px;
+                padding: 10px;
+                background-color: var(--bg-secondary);
+                border: 1px solid transparent;
+                border-radius: 20px;
+                text-align: center;
 
-                span {
-                    position: absolute;
-                    top: 35px;
-                    left: -25px;
-                    background-color: var(--bg-primary);
-                    padding: 15px 5px;
-                    border-radius: 50%;
-
-                    b {
-                        background-color: var(--font-primary);
-                        padding: 10px 15px;
-                        border-radius: 50%;
-                        font-weight: bold;
-                    }
+                img {
+                    width: 100%;
                 }
 
-                .hide {
-                    display: none;
+                h5 {
+                    width: 100%;
+                    position: absolute;
+                    top: -55px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    color: white;
+                }
+            }
+
+            .even {
+                background: linear-gradient(
+                            var(--bg-secondary),
+                            var(--bg-secondary)
+                        )
+                        padding-box,
+                    linear-gradient(to top, var(--bg-primary), transparent 60%)
+                        border-box;
+            }
+
+            .odd {
+                background: linear-gradient(
+                            var(--bg-secondary),
+                            var(--bg-secondary)
+                        )
+                        padding-box,
+                    linear-gradient(
+                            to bottom,
+                            var(--bg-primary),
+                            transparent 60%
+                        )
+                        border-box;
+            }
+        }
+
+        > img {
+            position: absolute;
+            bottom: 5%;
+            right: 10%;
+            width: 150px;
+
+            animation: tank_icon infinite 3s linear;
+
+            @media screen and (max-width: 576px) {
+                display: none;
+            }
+        }
+
+        @keyframes tank_icon {
+            0% {
+                transform: translate(0, 0);
+            }
+            50% {
+                transform: translate(-50px, 10px);
+            }
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+    }
+
+    .gamemode {
+        padding: 20px;
+
+        > div {
+            > span {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                h2 {
+                    @include title__hover;
+                    @include title__bar;
                 }
             }
         }
     }
 
-    .how__work {
-        background-image: url("../../images/bg-3.png");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position-x: 30%;
-        padding: 50px;
+    .news {
+        padding: 20px;
 
         > div {
-            h2 {
-                text-align: center;
-                text-transform: uppercase;
-                font-weight: bold;
-                background: -webkit-linear-gradient(
-                    96.41deg,
-                    #ffa100 11%,
-                    #ffd970 44.81%,
-                    #ff9c00 96.56%
-                );
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                -webkit-filter: drop-shadow(0 0 3px #ffa100);
-                filter: drop-shadow(0 0 5px #ffa100);
-            }
+            > span {
+                display: flex;
+                align-items: center;
+                justify-content: center;
 
-            .work__item {
-                padding: 30px;
-
-                > div {
-                    img {
-                        width: 100%;
-                        border-radius: 50%;
-                    }
-
-                    > div {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        padding: 150px 0 50px;
-                        margin: -100px auto 0;
-                        text-align: center;
-                        background: linear-gradient(
-                            to bottom,
-                            transparent,
-                            var(--bg-primary)
-                        );
-                        width: 70%;
-
-                        h5 {
-                            color: var(--font-white-color);
-                        }
-
-                        @media screen and (max-width: 625px) {
-                            h5 {
-                                font-size: 13px;
-                            }
-                        }
-
-                        @media screen and (max-width: 576px) {
-                            padding: 100px 0 10px;
-                            margin: -100px auto 0;
-
-                            h5 {
-                                font-size: 5vw;
-                            }
-                        }
-                    }
+                h2 {
+                    @include title__hover;
+                    @include title__bar;
                 }
             }
         }
