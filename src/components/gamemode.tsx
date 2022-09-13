@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 export default function GameMode(props: any) {
     const { image, content } = props;
 

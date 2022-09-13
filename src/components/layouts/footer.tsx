@@ -1,47 +1,47 @@
-import icon1 from "../../assets/images/icon1.png";
-import icon2 from "../../assets/images/icon2.png";
+import { BsTwitter, BsFacebook, BsMedium, BsYoutube } from "react-icons/bs";
 
 export default function Footer() {
     return (
-        <div className="footer">
-            <span className="logo"></span>
-            <img src={icon1} alt="" className="icon__1" />
-            <img src={icon2} alt="" className="icon__2" />
-            <div className="container">
-                <div className="spacer-double"></div>
-                <div className="spacer-single"></div>
-                <div className="row m0 text-center">
-                    <div className="col-sm-6 col-lg-2">
-                        <a href="/#">
-                            <h5>Tokenomics</h5>
-                        </a>
-                    </div>
-                    <div className="col-sm-6 col-lg-2">
-                        <a href="/#">
-                            <h5>Marketplace</h5>
-                        </a>
-                    </div>
-                    <div className="col-sm-0 col-lg-4"></div>
-                    <div className="col-sm-6 col-lg-2">
-                        <a href="/#">
-                            <h5>Roadmap</h5>
-                        </a>
-                    </div>
-                    <div className="col-sm-6 col-lg-2">
-                        <a href="/#">
-                            <h5>Contact Us</h5>
-                        </a>
+        <>
+            <div className="footer">
+                <div className="container">
+                    <div className="row m0 j-center j-middle text-center">
+                        <div className="col-12 col-md-5">
+                            <a href="https://twitter.com/">
+                                <BsTwitter />
+                            </a>
+                            <a href="https://facebook.com/">
+                                <BsFacebook />
+                            </a>
+                            <a href="https://medium.com/">
+                                <BsMedium />
+                            </a>
+                            <a href="https://youtube.com/">
+                                <BsYoutube />
+                            </a>
+                        </div>
+                        <div className="col-md-2">
+                            <span className="logo"></span>
+                        </div>
+                        <div className="col-12 col-md-5">
+                            <div className="search__box">
+                                <input
+                                    type={"email"}
+                                    placeholder="Enter Email ID"
+                                />
+                                <button>Subscription</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <p className="text-center">
-                    &copy; Copyright {new Date().getFullYear() - 1} -{" "}
-                    {new Date().getFullYear()}{" "}
-                    <a href="/#">
-                        <b>Tank Battle</b>
-                    </a>
-                    . All Rights Reserved. Terms | Privacy Policy
-                </p>
             </div>
-        </div>
+
+            <div className="spacer-half"></div>
+            <p className="text-center">
+                Copyright &copy;{new Date().getFullYear()} <b>defitankland</b>.
+                All Rights Reserved. Terms | Privacy Policy
+            </p>
+            <div className="spacer-half"></div>
+        </>
     );
 }

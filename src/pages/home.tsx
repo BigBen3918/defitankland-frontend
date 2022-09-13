@@ -1,7 +1,10 @@
 import GameMode from "../components/gamemode";
 import HowWork from "../components/howwork";
+import News from "../components/news";
 import { gamemode } from "../components/mocks/gamemode";
 import { howWork } from "../components/mocks/howwork";
+import { news } from "../components/mocks/news";
+import { partners } from "../components/mocks/partners";
 import { ScrollLink, ScrollElement } from "../components/ScrollEvent";
 
 export default function Home() {
@@ -116,7 +119,7 @@ export default function Home() {
                             <h2>Game Mode</h2>
                         </span>
                         <div className="spacer-double"></div>
-                        <div className="row j-center j-middle">
+                        <div className="row j-center j-around">
                             {gamemode.map((item: any, index: number) => (
                                 <div className="col-sm-4" key={index}>
                                     <GameMode
@@ -128,16 +131,59 @@ export default function Home() {
                             ))}
                         </div>
                     </div>
+                    <span className="light_top"></span>
+                    <span className="light_bottom"></span>
+                    <img
+                        src={require("../assets/images/icon2.png")}
+                        alt=""
+                        className="icon"
+                    />
+                    <div className="spacer-double"></div>
                 </div>
             </ScrollElement>
 
-            {/* Begin How Work */}
+            {/* Begin News */}
             <ScrollElement to="news">
                 <div className="news">
                     <div className="container">
                         <span>
                             <h2>News</h2>
                         </span>
+                        <div className="spacer-double"></div>
+                        <div className="row j-center j-around">
+                            {news.map((item: any, index: number) => (
+                                <div className="col-sm-4" key={index}>
+                                    <News
+                                        image={item.image}
+                                        title={item.title}
+                                        content={item.content}
+                                    />
+                                    <div className="spacer-single"></div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </ScrollElement>
+
+            {/* Begin Partner */}
+            <ScrollElement to="partner">
+                <div className="partner">
+                    <div className="container">
+                        <span>
+                            <h2>Our Partners</h2>
+                        </span>
+                        <div className="spacer-double"></div>
+                        <div className="row j-center j-around">
+                            {partners.map((item: any, index: number) => (
+                                <div className="col-sm-4" key={index}>
+                                    <div className="partner__item">
+                                        <img src={item.image} alt="" />
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                        <div className="spacer-double"></div>
                     </div>
                 </div>
             </ScrollElement>
