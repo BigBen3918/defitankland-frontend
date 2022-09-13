@@ -1,6 +1,6 @@
-import RoadmapTab from "../components/gamemode";
+import GameMode from "../components/gamemode";
 import HowWork from "../components/howwork";
-import roadmapData from "../components/mocks/roadmpa.json";
+import { gamemode } from "../components/mocks/gamemode";
 import { howWork } from "../components/mocks/howwork";
 import { ScrollLink, ScrollElement } from "../components/ScrollEvent";
 
@@ -90,7 +90,7 @@ export default function Home() {
                         </span>
                         <div className="spacer-double"></div>
                         <div className="row j-center j-middle">
-                            {howWork.map((item, index) => (
+                            {howWork.map((item: any, index: number) => (
                                 <div className="col-sm-3" key={index}>
                                     <HowWork
                                         image={item.image}
@@ -111,31 +111,34 @@ export default function Home() {
             {/* Begin GameMode */}
             <ScrollElement to="gamemode">
                 <div className="gamemode">
-                    {/* <div className="container">
+                    <div className="container">
                         <span>
                             <h2>Game Mode</h2>
                         </span>
-
-                        {roadmapData.map((item: any, index: number) => (
-                            <RoadmapTab
-                                title={item.title}
-                                content={item.content}
-                                index={index + 1}
-                                key={index}
-                            />
-                        ))}
-                    </div> */}
+                        <div className="spacer-double"></div>
+                        <div className="row j-center j-middle">
+                            {gamemode.map((item: any, index: number) => (
+                                <div className="col-sm-4" key={index}>
+                                    <GameMode
+                                        image={item.image}
+                                        content={item.content}
+                                    />
+                                    <div className="spacer-single"></div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
                 </div>
             </ScrollElement>
 
             {/* Begin How Work */}
             <ScrollElement to="news">
                 <div className="news">
-                    {/* <div className="container">
+                    <div className="container">
                         <span>
                             <h2>News</h2>
                         </span>
-                    </div> */}
+                    </div>
                 </div>
             </ScrollElement>
         </div>
