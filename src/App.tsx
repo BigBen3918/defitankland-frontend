@@ -16,6 +16,7 @@ import Notfound from "./pages/notfound";
 // Layouts
 import Header from "./components/layouts/header";
 import Footer from "./components/layouts/footer";
+import ScrollToTop from "./components/layouts/ScrollButton";
 /** ---------- End Pages ---------- */
 
 /** Begin SCSS Style */
@@ -59,6 +60,7 @@ export default function App() {
                     <Route path="*" element={<Notfound />} />
                 </Routes>
                 <Footer />
+                <ScrollToTop />
             </Router>
         </Provider>
     );

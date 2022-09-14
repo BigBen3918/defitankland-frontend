@@ -48,3 +48,43 @@ p {
 .spacer-double {
     height: 60px;
 }
+
+/** ----- ScrollTopButton Style ----- */
+.scroll-to-top {
+    position: relative;
+
+    .icon-style {
+        position: fixed;
+        bottom: 40px;
+        right: 40px;
+        z-index: 20;
+        background-color: var(--bg-secondary);
+        border: 2px solid #fff;
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        color: #fff;
+        transition: all 0.5s ease-in-out;
+        cursor: pointer;
+        animation: movebtn 3s ease-in-out infinite;
+
+        &:hover {
+            animation: none;
+            background: #fff;
+            color: var(--bg-primary);
+            border: 2px solid var(--bg-primary);
+        }
+    }
+
+    @keyframes movebtn {
+        0% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(20px);
+        }
+        100% {
+            transform: translateY(0px);
+        }
+    }
+}
