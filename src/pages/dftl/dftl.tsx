@@ -4,7 +4,6 @@ import Concepts from "./components/concepts";
 import { concepts } from "./components/mocks/concept";
 import { ScrollElement } from "../../components/ScrollEvent";
 import TabGroup from "../../components/tabgroup";
-import { ReactComponent as YourSvg } from "../../assets/images/partners/pancakeswap-cake-logo.svg";
 
 export default function DFTL() {
     return (
