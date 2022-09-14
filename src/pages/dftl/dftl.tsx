@@ -4,6 +4,7 @@ import Concepts from "./components/concepts";
 import { concepts } from "./components/mocks/concept";
 import { ScrollElement } from "../../components/ScrollEvent";
 import TabGroup from "../../components/tabgroup";
+import { ReactComponent as YourSvg } from "../../assets/images/partners/pancakeswap-cake-logo.svg";
 
 export default function DFTL() {
     return (
@@ -125,7 +126,7 @@ export default function DFTL() {
                                     <span>
                                         <h2>Staking DFTL</h2>
                                     </span>
-                                    <h5>
+                                    <h4>
                                         NIL token holder can stake to tank.
                                         <br />
                                         <br /> Each tank has a staking pool, the
@@ -135,8 +136,8 @@ export default function DFTL() {
                                         The staking has over 300% apy which
                                         decreases over time and there is a 30%
                                         deposit fee..
-                                    </h5>
-
+                                    </h4>
+                                    <div className="spacer-single"></div>
                                     <button>Stake</button>
                                 </div>
                                 <div className="spacer-single"></div>
@@ -213,18 +214,27 @@ export default function DFTL() {
                             <h2>DFTL Available on</h2>
                         </span>
                         <div className="links">
-                            <button>
-                                <img
-                                    src={require("../../assets/images/app_google.webp")}
-                                    alt=""
-                                />
-                            </button>
-                            <button>
-                                <img
-                                    src={require("../../assets/images/app_apple.webp")}
-                                    alt=""
-                                />
-                            </button>
+                            <span>
+                                <div>
+                                    <img
+                                        src={
+                                            require("../../assets/images/partners/pancakeswap-cake-logo.svg")
+                                                .default
+                                        }
+                                        alt=""
+                                    />
+                                    <p>Pancake Swap</p>
+                                </div>
+                            </span>
+                            <span>
+                                <div>
+                                    <img
+                                        src={require("../../assets/images/partners/pinkmoon.png")}
+                                        alt=""
+                                    />
+                                    <p>Pink Swap</p>
+                                </div>
+                            </span>
                         </div>
                         <div className="spacer-double"></div>
                         <div className="spacer-double"></div>
