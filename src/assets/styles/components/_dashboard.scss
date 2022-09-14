@@ -105,88 +105,6 @@
                     @include title__bar;
                 }
             }
-
-            @mixin item__common(
-                $position,
-                $font_color,
-                $gradient_direct,
-                $other
-            ) {
-                border-radius: 20px;
-                padding: 5px;
-                background: linear-gradient(
-                    $gradient_direct,
-                    $font_color,
-                    transparent 50%
-                );
-
-                div {
-                    position: relative;
-                    background: var(--bg-secondary);
-                    border-radius: 20px;
-                    width: 100%;
-                    height: 250px;
-
-                    span:nth-child(1) {
-                        position: absolute;
-                        width: 100%;
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        #{$position}: 20px;
-                        #{$other}: unset;
-                        left: 50%;
-                        transform: translateX(-50%);
-
-                        p {
-                            color: white;
-                        }
-
-                        h3 {
-                            color: $font_color;
-                        }
-                    }
-
-                    span:nth-child(2) {
-                        position: absolute;
-                        top: 0;
-                        left: 50%;
-                        transform: translate(-50%, -40px);
-                        background-color: var(--font-secondary);
-                        padding: 20px;
-                        color: $font_color;
-                        border-radius: 50%;
-                        font-size: 25px;
-                        box-shadow: 0 0 5px black;
-
-                        @media screen and (max-width: 576px) {
-                            transform: translate(-50%, 30px);
-                        }
-                    }
-                }
-            }
-
-            .item__container {
-                @include item__common(
-                    top,
-                    var(--font-primary),
-                    to bottom,
-                    right
-                );
-
-                @media screen and (max-width: 576px) {
-                    @include item__common(
-                        bottom,
-                        var(--font-primary),
-                        to top,
-                        top
-                    );
-                }
-            }
-
-            .item__container__reverse {
-                @include item__common(bottom, var(--font-third), to top, right);
-            }
         }
 
         > img {
@@ -366,6 +284,8 @@
 
     .gamemode {
         position: relative;
+        width: 85%;
+        margin: 0 auto 0;
 
         .light_top {
             position: absolute;
@@ -464,6 +384,10 @@
                     }
                 }
             }
+        }
+
+        @media screen and (max-width: 992px) {
+            width: 100%;
         }
     }
 

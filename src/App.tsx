@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import {
     BrowserRouter as Router,
     Routes,
@@ -6,6 +7,7 @@ import {
     useLocation,
 } from "react-router-dom";
 import Provider, { useGlobalContext } from "./context";
+import AOS from "aos";
 
 /** ---------- Begin Pages ---------- */
 // main pages
@@ -21,6 +23,7 @@ import ScrollToTop from "./components/layouts/ScrollButton";
 
 /** Begin SCSS Style */
 import "./assets/styles/index.scss";
+import "aos/dist/aos.css";
 /** End SCSS Style */
 
 interface Props {
@@ -40,6 +43,10 @@ const PrivateRoute: React.FC<Props> = ({ component: RouteComponent }) => {
 };
 
 export default function App() {
+    AOS.init({
+        duration: 1200,
+    });
+
     return (
         <Provider>
             <Router>

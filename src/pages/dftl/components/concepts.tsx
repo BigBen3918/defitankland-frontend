@@ -7,7 +7,7 @@ export default function Concepts(props: any) {
                 <h5>{title}</h5>
             </span>
             <div className="spacer-single"></div>
-            <p>{content}</p>
+            <p dangerouslySetInnerHTML={{ __html: content }}></p>
         </div>
     );
 }

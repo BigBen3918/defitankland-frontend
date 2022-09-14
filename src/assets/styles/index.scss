@@ -48,6 +48,27 @@ p {
 .spacer-double {
     height: 60px;
 }
+.spacer-triple {
+    height: 150px;
+}
+
+/** ----- TabGroup Style ----- */
+.tabgroup__item__container {
+    @include tabgroup__item__common(top, var(--font-primary), to bottom, right);
+
+    @media screen and (max-width: 576px) {
+        @include tabgroup__item__common(
+            bottom,
+            var(--font-primary),
+            to top,
+            top
+        );
+    }
+}
+
+.tabgroup__item__container__reverse {
+    @include tabgroup__item__common(bottom, var(--font-third), to top, right);
+}
 
 /** ----- ScrollTopButton Style ----- */
 .scroll-to-top {

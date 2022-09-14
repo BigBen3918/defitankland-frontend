@@ -3,6 +3,7 @@ import { FaUsers, FaRecycle, FaCoins } from "react-icons/fa";
 import Concepts from "./components/concepts";
 import { concepts } from "./components/mocks/concept";
 import { ScrollElement } from "../../components/ScrollEvent";
+import TabGroup from "../../components/tabgroup";
 
 export default function DFTL() {
     return (
@@ -11,7 +12,7 @@ export default function DFTL() {
             <ScrollElement to="dftl_intro">
                 <div className="intro">
                     <div className="back__effect">
-                        <div>
+                        <div data-aos="zoom-in" data-aos-once="true">
                             <h1>Defi Tank Land Token (DFTL)</h1>
                             <h4>
                                 DFTL is a utility token in the DefiTankLand
@@ -28,13 +29,17 @@ export default function DFTL() {
             <ScrollElement to="dftl_concept">
                 <div className="container">
                     <div className="concept">
-                        <div className="spacer-single"></div>
-                        <span>
+                        <div className="spacer-double"></div>
+                        <span data-aos="zoom-in" data-aos-once="true">
                             <h2>What is DFTL and what makes us storng</h2>
                         </span>
-                        <div className="spacer-double"></div>
-                        <div className="spacer-double"></div>
-                        <div className="row m0 j-center">
+                        <div className="spacer-triple"></div>
+                        <div
+                            className="row m0 j-center"
+                            data-aos="fade-down"
+                            data-aos-delay="300"
+                            data-aos-once="true"
+                        >
                             {concepts.map((item: any, index: number) => (
                                 <div className="col-sm-4" key={index}>
                                     <Concepts
@@ -45,6 +50,7 @@ export default function DFTL() {
                                 </div>
                             ))}
                         </div>
+                        <div className="spacer-triple"></div>
                     </div>
                 </div>
             </ScrollElement>
@@ -53,15 +59,19 @@ export default function DFTL() {
             <ScrollElement to="ecosystem">
                 <div className="ecosystem">
                     <div className="container">
-                        <div className="spacer-single"></div>
-                        <span>
+                        <div className="spacer-double"></div>
+                        <span data-aos="zoom-in" data-aos-once="true">
                             <h2>Token Ecosystem</h2>
                         </span>
+                        <div className="spacer-double"></div>
                         <img
                             src={require("../../assets/images/ecosystem.png")}
                             alt=""
+                            data-aos="zoom-out-up"
+                            data-aos-delay="500"
+                            data-aos-once="true"
                         />
-                        <div className="spacer-single"></div>
+                        <div className="spacer-triple"></div>
                     </div>
                 </div>
             </ScrollElement>
@@ -69,51 +79,48 @@ export default function DFTL() {
             <ScrollElement to="stake">
                 <div className="stake">
                     <div className="container">
-                        <div className="spacer-double"></div>
-                        <div className="row">
+                        <div className="spacer-triple"></div>
+                        <div
+                            className="row"
+                            data-aos="zoom-in-down"
+                            data-aos-delay="700"
+                            data-aos-once="true"
+                        >
                             <div className="col-sm-4">
-                                <div className="item__container">
-                                    <div>
-                                        <span>
-                                            <p>Token Price</p>
-                                            <h3>0.1$</h3>
-                                        </span>
-                                        <span>
-                                            <BsFillBookmarksFill />
-                                        </span>
-                                    </div>
-                                </div>
+                                <TabGroup
+                                    title={"Token Price"}
+                                    content={"0.1$"}
+                                    contentIcon={BsFillBookmarksFill}
+                                    classname={"tabgroup__item__container"}
+                                />
                             </div>
                             <div className="col-sm-4">
-                                <div className="item__container__reverse">
-                                    <div>
-                                        <span>
-                                            <p>Total Supply</p>
-                                            <h3>10M</h3>
-                                        </span>
-                                        <span>
-                                            <FaRecycle />
-                                        </span>
-                                    </div>
-                                </div>
+                                <TabGroup
+                                    title={"Total Supply"}
+                                    content={"10M"}
+                                    contentIcon={FaRecycle}
+                                    classname={
+                                        "tabgroup__item__container__reverse"
+                                    }
+                                />
                             </div>
                             <div className="col-sm-4">
-                                <div className="item__container">
-                                    <div>
-                                        <span>
-                                            <p>Token Players</p>
-                                            <h3>10k</h3>
-                                        </span>
-                                        <span>
-                                            <FaUsers />
-                                        </span>
-                                    </div>
-                                </div>
+                                <TabGroup
+                                    title={"Token Players"}
+                                    content={"10k"}
+                                    contentIcon={FaUsers}
+                                    classname={"tabgroup__item__container"}
+                                />
                             </div>
                         </div>
                         <div className="spacer-double"></div>
                         <div className="row m0 j-center j-middle">
-                            <div className="col-sm-6">
+                            <div
+                                className="col-sm-6"
+                                data-aos="fade-right"
+                                data-aos-delay="700"
+                                data-aos-once="true"
+                            >
                                 <div className="staking__content">
                                     <span>
                                         <h2>Staking DFTL</h2>
@@ -134,7 +141,12 @@ export default function DFTL() {
                                 </div>
                                 <div className="spacer-single"></div>
                             </div>
-                            <div className="col-sm-6">
+                            <div
+                                className="col-sm-6"
+                                data-aos="fade-left"
+                                data-aos-delay="700"
+                                data-aos-once="true"
+                            >
                                 <img
                                     className="apy__diagram"
                                     src={require("../../assets/images/apy.png")}
@@ -152,49 +164,41 @@ export default function DFTL() {
                 <div className="stake__metrix">
                     <div className="container">
                         <div className="spacer-single"></div>
-                        <span>
+                        <span data-aos="zoom-in" data-aos-once="true">
                             <h2>Stake Metrix</h2>
                         </span>
-                        <div className="spacer-double"></div>
-                        <div className="row">
+                        <div className="spacer-triple"></div>
+                        <div
+                            className="row"
+                            data-aos="zoom-in-down"
+                            data-aos-delay="1000"
+                            data-aos-once="true"
+                        >
                             <div className="col-sm-4">
-                                <div className="item__container">
-                                    <div>
-                                        <span>
-                                            <h3>10M</h3>
-                                            <p>Token Pool Price</p>
-                                        </span>
-                                        <span>
-                                            <BsFillBookmarksFill />
-                                        </span>
-                                    </div>
-                                </div>
+                                <TabGroup
+                                    title={"Token Pool Price"}
+                                    content={"10M"}
+                                    contentIcon={BsFillBookmarksFill}
+                                    classname={"tabgroup__item__container"}
+                                />
                             </div>
                             <div className="col-sm-4">
-                                <div className="item__container__reverse">
-                                    <div>
-                                        <span>
-                                            <h3>10k</h3>
-                                            <p>Staked Pool Size</p>
-                                        </span>
-                                        <span>
-                                            <BsStack />
-                                        </span>
-                                    </div>
-                                </div>
+                                <TabGroup
+                                    title={"Staked Pool Size"}
+                                    content={"10k"}
+                                    contentIcon={BsStack}
+                                    classname={
+                                        "tabgroup__item__container__reverse"
+                                    }
+                                />
                             </div>
                             <div className="col-sm-4">
-                                <div className="item__container">
-                                    <div>
-                                        <span>
-                                            <h3>140k</h3>
-                                            <p>Staked DFTL on Pool</p>
-                                        </span>
-                                        <span>
-                                            <FaCoins />
-                                        </span>
-                                    </div>
-                                </div>
+                                <TabGroup
+                                    title={"Staked DFTL on Pool"}
+                                    content={"140k"}
+                                    contentIcon={FaCoins}
+                                    classname={"tabgroup__item__container"}
+                                />
                             </div>
                         </div>
                         <div className="spacer-double"></div>
@@ -205,8 +209,7 @@ export default function DFTL() {
             <ScrollElement to="available">
                 <div className="available">
                     <div className="container">
-                        <div className="spacer-single"></div>
-                        <span>
+                        <span data-aos="zoom-in" data-aos-once="true">
                             <h2>DFTL Available on</h2>
                         </span>
                         <div className="links">

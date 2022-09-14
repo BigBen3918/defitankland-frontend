@@ -10,6 +10,7 @@ import { howWork } from "./components/mocks/howwork";
 import { news } from "./components/mocks/news";
 import { partners } from "./components/mocks/partners";
 import { ScrollLink, ScrollElement } from "../../components/ScrollEvent";
+import TabGroup from "../../components/tabgroup";
 
 export default function Home() {
     return (
@@ -18,7 +19,7 @@ export default function Home() {
             <ScrollElement to="introduce">
                 <div className="intro">
                     <div className="back__effect">
-                        <div>
+                        <div data-aos="zoom-in" data-aos-once="true">
                             <h1>DefiTankLand</h1>
                             <div>
                                 <h3>
@@ -45,49 +46,51 @@ export default function Home() {
             <ScrollElement to="metrix">
                 <div className="metrix">
                     <div className="container">
-                        <span>
+                        <span data-aos="zoom-in" data-aos-once="true">
                             <h2>Metrix</h2>
                         </span>
-                        <div className="spacer-double"></div>
+                        <div className="spacer-triple"></div>
                         <div className="row">
-                            <div className="col-sm-4">
-                                <div className="item__container">
-                                    <div>
-                                        <span>
-                                            <p>Token Price</p>
-                                            <h3>1010</h3>
-                                        </span>
-                                        <span>
-                                            <BsFillBookmarksFill />
-                                        </span>
-                                    </div>
-                                </div>
+                            <div
+                                className="col-sm-4"
+                                data-aos="fade-down"
+                                data-aos-delay="300"
+                                data-aos-once="true"
+                            >
+                                <TabGroup
+                                    title={"Token Price"}
+                                    content={"1010"}
+                                    contentIcon={BsFillBookmarksFill}
+                                    classname={"tabgroup__item__container"}
+                                />
                             </div>
-                            <div className="col-sm-4">
-                                <div className="item__container__reverse">
-                                    <div>
-                                        <span>
-                                            <p>Total Tanks</p>
-                                            <h3>1010</h3>
-                                        </span>
-                                        <span>
-                                            <GiTank />
-                                        </span>
-                                    </div>
-                                </div>
+                            <div
+                                className="col-sm-4"
+                                data-aos="fade-up"
+                                data-aos-delay="300"
+                                data-aos-once="true"
+                            >
+                                <TabGroup
+                                    title={"Total Tanks"}
+                                    content={"1010"}
+                                    contentIcon={GiTank}
+                                    classname={
+                                        "tabgroup__item__container__reverse"
+                                    }
+                                />
                             </div>
-                            <div className="col-sm-4">
-                                <div className="item__container">
-                                    <div>
-                                        <span>
-                                            <p>Token Players</p>
-                                            <h3>1010</h3>
-                                        </span>
-                                        <span>
-                                            <FaUsers />
-                                        </span>
-                                    </div>
-                                </div>
+                            <div
+                                className="col-sm-4"
+                                data-aos="fade-down"
+                                data-aos-delay="300"
+                                data-aos-once="true"
+                            >
+                                <TabGroup
+                                    title={"Token Players"}
+                                    content={"1010"}
+                                    contentIcon={FaUsers}
+                                    classname={"tabgroup__item__container"}
+                                />
                             </div>
                         </div>
                         <div className="spacer-single"></div>
@@ -104,11 +107,16 @@ export default function Home() {
             <ScrollElement to="howitwork">
                 <div className="howitwork">
                     <div className="container">
-                        <span>
+                        <span data-aos="zoom-in" data-aos-once="true">
                             <h2>How It Works</h2>
                         </span>
                         <div className="spacer-double"></div>
-                        <div className="row j-center j-middle">
+                        <div
+                            className="row j-center j-middle"
+                            data-aos="zoom-in-down"
+                            data-aos-delay="500"
+                            data-aos-once="true"
+                        >
                             {howWork.map((item: any, index: number) => (
                                 <div className="col-sm-3" key={index}>
                                     <HowWork
@@ -116,8 +124,7 @@ export default function Home() {
                                         content={item.content}
                                         count={index}
                                     />
-                                    <div className="spacer-double"></div>
-                                    <div className="spacer-single"></div>
+                                    <div className="spacer-triple"></div>
                                 </div>
                             ))}
                         </div>
@@ -134,11 +141,16 @@ export default function Home() {
             <ScrollElement to="gamemode">
                 <div className="gamemode">
                     <div className="container">
-                        <span>
+                        <span data-aos="zoom-in" data-aos-once="true">
                             <h2>Game Mode</h2>
                         </span>
-                        <div className="spacer-double"></div>
-                        <div className="row j-center j-around">
+                        <div className="spacer-single"></div>
+                        <div
+                            className="row j-center j-around"
+                            data-aos="zoom-in-down"
+                            data-aos-delay="700"
+                            data-aos-once="true"
+                        >
                             {gamemode.map((item: any, index: number) => (
                                 <div className="col-sm-4" key={index}>
                                     <GameMode
@@ -165,11 +177,16 @@ export default function Home() {
             <ScrollElement to="news">
                 <div className="news">
                     <div className="container">
-                        <span>
+                        <span data-aos="zoom-in" data-aos-once="true">
                             <h2>News</h2>
                         </span>
                         <div className="spacer-double"></div>
-                        <div className="row j-center j-around">
+                        <div
+                            className="row j-center j-around"
+                            data-aos="fade-down"
+                            data-aos-delay="1000"
+                            data-aos-once="true"
+                        >
                             {news.map((item: any, index: number) => (
                                 <div className="col-sm-4" key={index}>
                                     <News
@@ -181,6 +198,7 @@ export default function Home() {
                                 </div>
                             ))}
                         </div>
+                        <div className="spacer-double"></div>
                     </div>
                 </div>
             </ScrollElement>
@@ -189,11 +207,16 @@ export default function Home() {
             <ScrollElement to="partner">
                 <div className="partner">
                     <div className="container">
-                        <span>
+                        <span data-aos="zoom-in" data-aos-once="true">
                             <h2>Our Partners</h2>
                         </span>
                         <div className="spacer-double"></div>
-                        <div className="row j-center j-around">
+                        <div
+                            className="row j-center j-around"
+                            data-aos="zoom-out-up"
+                            data-aos-delay="1200"
+                            data-aos-once="true"
+                        >
                             {partners.map((item: any, index: number) => (
                                 <div className="col-sm-4" key={index}>
                                     <div className="partner__item">
