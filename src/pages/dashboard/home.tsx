@@ -30,7 +30,7 @@ export default function Home() {
                         </div>
 
                         <span></span>
-                        <ScrollLink to="metrix">
+                        <ScrollLink to="howitwork">
                             <button>
                                 <img
                                     src={require("../../assets/images/scrollbutton.webp")}

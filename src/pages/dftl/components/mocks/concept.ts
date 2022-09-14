@@ -1,6 +1,6 @@
 export const concepts = [
     {
-        title: "Guaranteed Taken Intrinsic Value",
+        title: "Guaranteed Token Intrinsic Value",
         content:
             "DeFiTarkLand is a totally enjoyable game for real players who play for fun. <br /><br /> DFTL intrinsic value is primarily The initial supply is designed to fit the size of the in-gone utility. <br /><br /> Buy Tanks, Upgrade Tanks, Stake to Tank and Expansion Use Cases in Tankland World",
     },

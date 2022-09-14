@@ -35,7 +35,7 @@ export default function DFTL() {
                         </span>
                         <div className="spacer-triple"></div>
                         <div
-                            className="row m0 j-center"
+                            className="row j-center"
                             data-aos="fade-down"
                             data-aos-delay="300"
                             data-aos-once="true"
