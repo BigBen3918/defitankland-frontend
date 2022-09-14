@@ -65,7 +65,7 @@ export default function DFTL() {
                         </span>
                         <div className="spacer-double"></div>
                         <img
-                            src={require("../../assets/images/ecosystem.png")}
+                            src={require("../../assets/images/ecosystem.webp")}
                             alt=""
                             data-aos="zoom-out-up"
                             data-aos-delay="500"
@@ -149,7 +149,7 @@ export default function DFTL() {
                             >
                                 <img
                                     className="apy__diagram"
-                                    src={require("../../assets/images/apy.png")}
+                                    src={require("../../assets/images/apy.webp")}
                                     alt=""
                                 />
                             </div>
@@ -215,13 +215,13 @@ export default function DFTL() {
                         <div className="links">
                             <button>
                                 <img
-                                    src={require("../../assets/images/app_google.png")}
+                                    src={require("../../assets/images/app_google.webp")}
                                     alt=""
                                 />
                             </button>
                             <button>
                                 <img
-                                    src={require("../../assets/images/app_apple.png")}
+                                    src={require("../../assets/images/app_apple.webp")}
                                     alt=""
                                 />
                             </button>

@@ -4,7 +4,7 @@
             position: relative;
             width: 100%;
             height: 100vh;
-            background-image: url("../../images/back_image.png");
+            background-image: url("../../images/back_image.webp");
             background-size: cover;
             background-repeat: no-repeat;
             background-position-x: 60%;
@@ -86,7 +86,7 @@
 
     .metrix {
         position: relative;
-        background-image: url("../../images/bg-1.png");
+        background-image: url("../../images/bg-1.webp");
         background-size: 100%;
         background-repeat: no-repeat;
         background-position: 0 60%;
@@ -133,7 +133,7 @@
     }
 
     .howitwork {
-        background-image: url("../../images/bg-2.png");
+        background-image: url("../../images/bg-2.webp");
         background-size: cover;
         background-repeat: no-repeat;
         position: relative;
@@ -174,7 +174,7 @@
 
                 &::before {
                     position: absolute;
-                    content: url("../../images/arrow.png");
+                    content: url("../../images/arrow.webp");
                     width: 50px;
 
                     @media screen and (max-width: 768px) {
@@ -393,7 +393,7 @@
 
     .news {
         padding: 20px;
-        background-image: url("../../images/bg-2.png");
+        background-image: url("../../images/bg-2.webp");
         background-repeat: no-repeat;
         background-size: cover;
 
@@ -436,7 +436,7 @@
 
     .partner {
         padding: 20px;
-        background-image: url("../../images/bg-3.png");
+        background-image: url("../../images/bg-3.webp");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: 50%;

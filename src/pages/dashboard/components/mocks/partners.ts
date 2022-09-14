@@ -1,4 +1,4 @@
-import card from "../../../../assets/images/partners/pokemon.png";
+import card from "../../../../assets/images/partners/pokemon.webp";
 
 export const partners = [
     {

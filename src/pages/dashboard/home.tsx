@@ -33,7 +33,7 @@ export default function Home() {
                         <ScrollLink to="metrix">
                             <button>
                                 <img
-                                    src={require("../../assets/images/scrollbutton.png")}
+                                    src={require("../../assets/images/scrollbutton.webp")}
                                     alt=""
                                 />
                             </button>
@@ -97,7 +97,7 @@ export default function Home() {
                     </div>
 
                     <img
-                        src={require("../../assets/images/icon2.png")}
+                        src={require("../../assets/images/icon2.webp")}
                         alt=""
                     />
                 </div>
@@ -131,7 +131,7 @@ export default function Home() {
                     </div>
 
                     <img
-                        src={require("../../assets/images/icon1.png")}
+                        src={require("../../assets/images/icon1.webp")}
                         alt=""
                     />
                 </div>
@@ -165,7 +165,7 @@ export default function Home() {
                     <span className="light_top"></span>
                     <span className="light_bottom"></span>
                     <img
-                        src={require("../../assets/images/icon2.png")}
+                        src={require("../../assets/images/icon2.webp")}
                         alt=""
                         className="icon"
                     />
