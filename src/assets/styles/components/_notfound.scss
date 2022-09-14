@@ -1,0 +1,119 @@
+.notfound {
+    .back__effect {
+        background-image: url("../../images/notfound.webp");
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        > div {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+
+            .content {
+                font-family: "Avenir-Next", Avenir, Helvetica, sans-serif;
+                position: absolute;
+                top: 40%;
+                -webkit-transform: translateY(-50%);
+                -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+
+                h1 {
+                    color: #1a1a1a;
+                    font-size: 15em;
+                    margin: 5rem 0;
+                    text-align: left;
+                    text-shadow: -5px 5px 0px rgba(0, 0, 0, 0.7),
+                        -10px 10px 0px rgba(0, 0, 0, 0.4),
+                        -15px 15px 0px rgba(0, 0, 0, 0.2);
+                    font-family: monospace;
+                    font-weight: bold;
+                }
+
+                h2 {
+                    color: #f1c555;
+                    font-size: 3em;
+                    text-shadow: -3px 3px 0px rgba(241, 197, 85, 0.5);
+                    font-family: monospace;
+                    font-weight: bold;
+                }
+
+                p {
+                    color: white;
+                    font-size: 1.5em;
+                    font-family: monospace;
+                    font-weight: bold;
+                }
+
+                span {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+                    width: 250px;
+                    border: 1px solid #aaa;
+                    color: grey;
+                    background: rgba(255, 255, 255, 0.1);
+                    border-radius: 50px;
+                    padding: 15px 30px;
+                    box-shadow: 0 0 15px grey;
+                    font-size: 1.2rem;
+                    font-weight: bolder;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: #e2e2e2;
+                    }
+
+                    svg {
+                        animation: go-to 2s infinite linear;
+                    }
+                }
+
+                @keyframes go-to {
+                    0% {
+                        transform: translateX(0px);
+                    }
+                    50% {
+                        transform: translateX(-20px);
+                    }
+                    100% {
+                        transform: translateX(0px);
+                    }
+                }
+
+                @media screen and (max-width: 768px) {
+                    text-align: center;
+
+                    h1,
+                    h2 {
+                        text-align: center;
+                    }
+
+                    span {
+                        width: 100%;
+                    }
+                }
+
+                @media screen and (max-width: 360px) {
+                    text-align: center;
+
+                    h1 {
+                        font-size: 50vw;
+                    }
+
+                    h2 {
+                        font-size: 8vw;
+                    }
+
+                    p {
+                        font-size: 5vw;
+                    }
+
+                    span {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -141,6 +141,7 @@ export default function Home() {
             <ScrollElement to="gamemode">
                 <div className="gamemode">
                     <div className="container">
+                        <div className="spacer-single"></div>
                         <span data-aos="zoom-in" data-aos-once="true">
                             <h2>Game Mode</h2>
                         </span>

@@ -1,10 +1,10 @@
-import { useEffect } from "react";
 import {
     BrowserRouter as Router,
     Routes,
     Route,
     Navigate,
     useLocation,
+    Outlet,
 } from "react-router-dom";
 import Provider, { useGlobalContext } from "./context";
 import AOS from "aos";
@@ -50,25 +50,28 @@ export default function App() {
     return (
         <Provider>
             <Router>
-                <Header />
                 <Routes>
-                    {/* Non Auth Routes */}
                     <Route path="/" element={<Navigate to={"/dashboard"} />} />
-                    <Route path="/dashboard" element={<Home />} />
-                    <Route path="/dftl" element={<DFTL />} />
+                    <Route path="/" element={<SubApp />}>
+                        <Route path="/dashboard" element={<Home />} />
+                        <Route path="/dftl" element={<DFTL />} />
+                    </Route>
 
-                    {/* Auth Routes */}
-                    {/* <Route
-                        path="/allnft"
-                        element={<PrivateRoute component={} />}
-                    /> */}
-
-                    {/* Other Routes */}
+                    {/* Not Found */}
                     <Route path="*" element={<Notfound />} />
                 </Routes>
-                <Footer />
                 <ScrollToTop />
             </Router>
         </Provider>
     );
 }
+
+const SubApp = () => {
+    return (
+        <>
+            <Header />
+            <Outlet />
+            <Footer />
+        </>
+    );
+};
