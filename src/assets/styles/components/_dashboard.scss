@@ -127,7 +127,7 @@
                     width: 100%;
                     height: 250px;
 
-                    > span {
+                    span:nth-child(1) {
                         position: absolute;
                         width: 100%;
                         display: flex;
@@ -146,29 +146,46 @@
                             color: $font_color;
                         }
                     }
+
+                    span:nth-child(2) {
+                        position: absolute;
+                        top: 0;
+                        left: 50%;
+                        transform: translate(-50%, -40px);
+                        background-color: var(--font-secondary);
+                        padding: 20px;
+                        color: $font_color;
+                        border-radius: 50%;
+                        font-size: 25px;
+                        box-shadow: 0 0 5px black;
+
+                        @media screen and (max-width: 576px) {
+                            transform: translate(-50%, 30px);
+                        }
+                    }
                 }
             }
 
             .item__container {
                 @include item__common(
-                    bottom,
+                    top,
                     var(--font-primary),
-                    to top,
+                    to bottom,
                     right
                 );
-            }
-
-            .item__container__reverse {
-                @include item__common(top, var(--font-third), to bottom, right);
 
                 @media screen and (max-width: 576px) {
                     @include item__common(
                         bottom,
-                        var(--font-third),
+                        var(--font-primary),
                         to top,
                         top
                     );
                 }
+            }
+
+            .item__container__reverse {
+                @include item__common(bottom, var(--font-third), to top, right);
             }
         }
 

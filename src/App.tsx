@@ -9,8 +9,8 @@ import Provider, { useGlobalContext } from "./context";
 
 /** ---------- Begin Pages ---------- */
 // main pages
-import Home from "./pages/home";
-import Profile from "./pages/profile";
+import Home from "./pages/dashboard/home";
+import DFTL from "./pages/dftl/dftl";
 import Notfound from "./pages/notfound";
 
 // Layouts
@@ -47,12 +47,13 @@ export default function App() {
                     {/* Non Auth Routes */}
                     <Route path="/" element={<Navigate to={"/dashboard"} />} />
                     <Route path="/dashboard" element={<Home />} />
+                    <Route path="/dftl" element={<DFTL />} />
 
                     {/* Auth Routes */}
-                    <Route
+                    {/* <Route
                         path="/allnft"
-                        element={<PrivateRoute component={Profile} />}
-                    />
+                        element={<PrivateRoute component={} />}
+                    /> */}
 
                     {/* Other Routes */}
                     <Route path="*" element={<Notfound />} />

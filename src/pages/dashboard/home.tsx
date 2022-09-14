@@ -1,11 +1,15 @@
-import GameMode from "../components/gamemode";
-import HowWork from "../components/howwork";
-import News from "../components/news";
-import { gamemode } from "../components/mocks/gamemode";
-import { howWork } from "../components/mocks/howwork";
-import { news } from "../components/mocks/news";
-import { partners } from "../components/mocks/partners";
-import { ScrollLink, ScrollElement } from "../components/ScrollEvent";
+import { GiTank } from "react-icons/gi";
+import { BsFillBookmarksFill } from "react-icons/bs";
+import { FaUsers } from "react-icons/fa";
+
+import GameMode from "./components/gamemode";
+import HowWork from "./components/howwork";
+import News from "./components/news";
+import { gamemode } from "./components/mocks/gamemode";
+import { howWork } from "./components/mocks/howwork";
+import { news } from "./components/mocks/news";
+import { partners } from "./components/mocks/partners";
+import { ScrollLink, ScrollElement } from "../../components/ScrollEvent";
 
 export default function Home() {
     return (
@@ -28,7 +32,7 @@ export default function Home() {
                         <ScrollLink to="metrix">
                             <button>
                                 <img
-                                    src={require("../assets/images/scrollbutton.png")}
+                                    src={require("../../assets/images/scrollbutton.png")}
                                     alt=""
                                 />
                             </button>
@@ -53,6 +57,9 @@ export default function Home() {
                                             <p>Token Price</p>
                                             <h3>1010</h3>
                                         </span>
+                                        <span>
+                                            <BsFillBookmarksFill />
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -62,6 +69,9 @@ export default function Home() {
                                         <span>
                                             <p>Total Tanks</p>
                                             <h3>1010</h3>
+                                        </span>
+                                        <span>
+                                            <GiTank />
                                         </span>
                                     </div>
                                 </div>
@@ -73,6 +83,9 @@ export default function Home() {
                                             <p>Token Players</p>
                                             <h3>1010</h3>
                                         </span>
+                                        <span>
+                                            <FaUsers />
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -80,7 +93,10 @@ export default function Home() {
                         <div className="spacer-single"></div>
                     </div>
 
-                    <img src={require("../assets/images/icon2.png")} alt="" />
+                    <img
+                        src={require("../../assets/images/icon2.png")}
+                        alt=""
+                    />
                 </div>
             </ScrollElement>
 
@@ -107,7 +123,10 @@ export default function Home() {
                         </div>
                     </div>
 
-                    <img src={require("../assets/images/icon1.png")} alt="" />
+                    <img
+                        src={require("../../assets/images/icon1.png")}
+                        alt=""
+                    />
                 </div>
             </ScrollElement>
 
@@ -134,7 +153,7 @@ export default function Home() {
                     <span className="light_top"></span>
                     <span className="light_bottom"></span>
                     <img
-                        src={require("../assets/images/icon2.png")}
+                        src={require("../../assets/images/icon2.png")}
                         alt=""
                         className="icon"
                     />

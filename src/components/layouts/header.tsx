@@ -109,7 +109,7 @@ const MenuItem = (props: any) => {
                 </li>
                 <li>
                     <Link to="/dftl">
-                        <h2>DFTL</h2>
+                        <h2 onClick={() => setShowMenu(false)}>DFTL</h2>
                     </Link>
                 </li>
                 <li>

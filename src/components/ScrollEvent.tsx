@@ -7,7 +7,7 @@ type Props = {
 };
 
 export const ScrollLink: React.FC<Props> = ({ to, children }) => (
-    <Link activeClass="active" to={to} spy={true} smooth={true} duration={50}>
+    <Link to={to} spy={true} smooth={true} duration={50}>
         {children}
     </Link>
 );

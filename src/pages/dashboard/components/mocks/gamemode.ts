@@ -1,8 +1,8 @@
-import card1 from "../../assets/images/kind1.png";
-import card2 from "../../assets/images/kind2.png";
-import card3 from "../../assets/images/kind3.png";
-import card4 from "../../assets/images/kind4.png";
-import card5 from "../../assets/images/kind5.png";
+import card1 from "../../../../assets/images/kind1.png";
+import card2 from "../../../../assets/images/kind2.png";
+import card3 from "../../../../assets/images/kind3.png";
+import card4 from "../../../../assets/images/kind4.png";
+import card5 from "../../../../assets/images/kind5.png";
 
 export const gamemode = [
     {

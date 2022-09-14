@@ -1,0 +1,427 @@
+.dftl {
+    .intro {
+        .back__effect {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background-image: url("../../images/dftl_bg_1.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position-x: 60%;
+
+            > div {
+                position: absolute;
+                top: 40%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+
+                h1 {
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    @include title__hover;
+                }
+
+                h4 {
+                    color: var(--font-white-color);
+                }
+
+                button {
+                    outline: 0;
+                    border: 0;
+                    padding: 20px 50px;
+                    font-size: 14px;
+                    font-weight: bold;
+                    border-radius: 50px;
+                    cursor: pointer;
+                    background-color: var(--bg-primary);
+
+                    &:hover {
+                        color: var(--font-white-color);
+                    }
+                }
+
+                @media screen and (max-width: 992px) {
+                    top: 50%;
+
+                    h1 {
+                        font-size: 50px;
+                    }
+                }
+
+                @media screen and (max-width: 768px) {
+                    width: 100%;
+                    top: 50%;
+
+                    h1 {
+                        font-size: 40px;
+                    }
+                }
+
+                @media screen and (max-width: 350px) {
+                    h1 {
+                        font-size: 10vw;
+                    }
+                }
+            }
+        }
+    }
+
+    .concept {
+        > span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            h2 {
+                @include title__hover;
+                @include title__bar;
+            }
+        }
+
+        .concept__item {
+            position: relative;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            text-align: justify;
+            background-color: #482219;
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: 0.2s ease-in;
+
+            > span {
+                background-color: #482219;
+                position: absolute;
+                box-shadow: 0 5px 10px var(--font-dark-color);
+                border-radius: 10px;
+                bottom: 100%;
+                left: 50%;
+                transform: translate(-50%, 40px);
+                width: 90%;
+                padding: 0 10px;
+                text-align: center;
+                color: white;
+            }
+
+            &:hover {
+                background-color: rgb(83, 40, 4);
+                border: 1px solid #f3903a;
+                color: var(--font-secondary);
+
+                > span {
+                    background-color: #f3903a;
+                }
+            }
+        }
+    }
+
+    .ecosystem {
+        position: relative;
+        background-color: #f3903a;
+        background-image: url("../../images/dftl_bg_2.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position-x: 60%;
+
+        > div {
+            > span {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                h2 {
+                    @include title__hover;
+                    @include title__bar;
+                }
+            }
+
+            img {
+                width: 100%;
+                padding: 20px;
+            }
+        }
+    }
+
+    .stake {
+        position: relative;
+
+        > div {
+            padding: 20px;
+
+            .light_top {
+                position: absolute;
+                top: 20%;
+                left: 0;
+                border-radius: 50%;
+                box-shadow: 0 0 160px 30px rgb(122, 70, 1),
+                    0 0 100px 60px #461e07, 0 0 250px 190px #4b1b00;
+            }
+
+            .light_bottom {
+                position: absolute;
+                bottom: 10%;
+                right: 0;
+                border-radius: 50%;
+                box-shadow: 0 0 60px 30px rgb(163, 92, 0),
+                    0 0 100px 60px #7a4424, 0 0 150px 90px #993800;
+            }
+
+            @mixin item__common(
+                $position,
+                $font_color,
+                $gradient_direct,
+                $other
+            ) {
+                border-radius: 20px;
+                padding: 5px;
+                background: linear-gradient(
+                    $gradient_direct,
+                    $font_color,
+                    transparent 50%
+                );
+
+                div {
+                    position: relative;
+                    background: var(--bg-secondary);
+                    border-radius: 20px;
+                    width: 100%;
+                    height: 250px;
+
+                    span:nth-child(1) {
+                        position: absolute;
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        #{$position}: 20px;
+                        #{$other}: unset;
+                        left: 50%;
+                        transform: translateX(-50%);
+
+                        p {
+                            color: white;
+                        }
+
+                        h3 {
+                            color: $font_color;
+                        }
+                    }
+
+                    span:nth-child(2) {
+                        position: absolute;
+                        top: 0;
+                        left: 50%;
+                        transform: translate(-50%, -40px);
+                        background-color: var(--font-secondary);
+                        padding: 20px;
+                        color: $font_color;
+                        border-radius: 50%;
+                        font-size: 25px;
+                        box-shadow: 0 0 5px black;
+
+                        @media screen and (max-width: 576px) {
+                            transform: translate(-50%, 30px);
+                        }
+                    }
+                }
+            }
+
+            .item__container {
+                @include item__common(
+                    top,
+                    var(--font-primary),
+                    to bottom,
+                    right
+                );
+
+                @media screen and (max-width: 576px) {
+                    @include item__common(
+                        bottom,
+                        var(--font-primary),
+                        to top,
+                        top
+                    );
+                }
+            }
+
+            .item__container__reverse {
+                @include item__common(bottom, var(--font-third), to top, right);
+            }
+
+            .staking__content {
+                > span {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+
+                    h2 {
+                        @include title__hover;
+                        @include title__bar;
+                    }
+                }
+
+                h5 {
+                    color: var(--font-white-color);
+                }
+
+                button {
+                    font-size: 14px;
+                    font-weight: bold;
+                    padding: 15px 50px;
+                    background-color: var(--bg-primary);
+                    color: var(--font-secondary);
+                    border-radius: 50px;
+                    transition: 0.3s ease-in;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: var(--font-white-color);
+                    }
+                }
+            }
+
+            .apy__diagram {
+                width: 100%;
+            }
+        }
+    }
+
+    .stake__metrix {
+        > div {
+            > span {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                h2 {
+                    @include title__hover;
+                    @include title__bar;
+                }
+            }
+
+            @mixin item__common(
+                $position,
+                $font_color,
+                $gradient_direct,
+                $other
+            ) {
+                border-radius: 20px;
+                padding: 5px;
+                background: linear-gradient(
+                    $gradient_direct,
+                    $font_color,
+                    transparent 50%
+                );
+
+                div {
+                    position: relative;
+                    background: var(--bg-secondary);
+                    border-radius: 20px;
+                    width: 100%;
+                    height: 250px;
+
+                    span:nth-child(1) {
+                        position: absolute;
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        #{$position}: 20px;
+                        #{$other}: unset;
+                        left: 50%;
+                        transform: translateX(-50%);
+
+                        p {
+                            color: white;
+                        }
+
+                        h3 {
+                            color: $font_color;
+                        }
+                    }
+
+                    span:nth-child(2) {
+                        position: absolute;
+                        top: 0;
+                        left: 50%;
+                        transform: translate(-50%, -40px);
+                        background-color: var(--font-secondary);
+                        padding: 20px;
+                        color: $font_color;
+                        border-radius: 50%;
+                        font-size: 25px;
+                        box-shadow: 0 0 5px black;
+
+                        @media screen and (max-width: 576px) {
+                            transform: translate(-50%, 30px);
+                        }
+                    }
+                }
+            }
+
+            .item__container {
+                @include item__common(
+                    top,
+                    var(--font-primary),
+                    to bottom,
+                    right
+                );
+
+                @media screen and (max-width: 576px) {
+                    @include item__common(
+                        bottom,
+                        var(--font-primary),
+                        to top,
+                        top
+                    );
+                }
+            }
+
+            .item__container__reverse {
+                @include item__common(bottom, var(--font-third), to top, right);
+            }
+        }
+    }
+
+    .available {
+        > div {
+            > span {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                h2 {
+                    @include title__hover;
+                    @include title__bar;
+                }
+            }
+
+            .links {
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+
+                button {
+                    outline: 0;
+                    border: 0;
+                    background: transparent;
+                    transition: 0.2s ease-in;
+                    cursor: pointer;
+                    max-width: 200px;
+
+                    img {
+                        width: 100%;
+                    }
+
+                    &:hover {
+                        transform: translateY(-5px);
+                    }
+                }
+            }
+        }
+    }
+}
