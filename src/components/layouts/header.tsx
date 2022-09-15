@@ -33,7 +33,10 @@ export default function Header() {
                                 </Link>
                             </div>
                             <div className="col-4">
-                                <a href="/#" className="sub__button">
+                                <a
+                                    href={process.env.REACT_APP_LAUNCHAPPURL}
+                                    className="sub__button"
+                                >
                                     <button>Launch App</button>
                                 </a>
                             </div>
@@ -69,7 +72,12 @@ export default function Header() {
                                         </a>
                                     </div>
                                     <div className="col-6 pr0">
-                                        <a href="/#">
+                                        <a
+                                            href={
+                                                process.env
+                                                    .REACT_APP_LAUNCHAPPURL
+                                            }
+                                        >
                                             <button>Launch App</button>
                                         </a>
                                     </div>
@@ -118,7 +126,7 @@ const MenuItem = (props: any) => {
                     </a>
                 </li>
                 <li>
-                    <a href="/#">
+                    <a href={process.env.REACT_APP_LAUNCHAPPURL}>
                         <button>Launch App</button>
                     </a>
                 </li>
