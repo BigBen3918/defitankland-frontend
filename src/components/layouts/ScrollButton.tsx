@@ -19,10 +19,10 @@ export default function ScrollToTop() {
     };
 
     return (
-        <div className="scroll-to-top">
+        <div className="scroll__to__top">
             {is_visible && (
                 <FaArrowCircleUp
-                    className="icon-position icon-style"
+                    className="icon__style"
                     onClick={scrollToTop}
                 />
             )}

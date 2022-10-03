@@ -3,7 +3,7 @@ import { FaUsers, FaRecycle, FaCoins } from "react-icons/fa";
 import Concepts from "./components/concepts";
 import { concepts } from "./components/mocks/concept";
 import { ScrollElement } from "../../components/ScrollEvent";
-import TabGroup from "../../components/tabgroup";
+import TabGroup from "../../components/TabGroup";
 
 export default function DFTL() {
     return (

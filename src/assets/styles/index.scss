@@ -11,32 +11,8 @@ p {
     line-height: 1.2rem;
     color: var(--font-white-color);
 }
-
 .text-white {
     color: var(--font-white-color);
-}
-
-::-webkit-scrollbar {
-    width: 10px;
-    background: var(--font-white-color);
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-    background: transparent;
-    box-shadow: inset 0 0 5px var(--bg-secondary);
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: var(--bg-primary);
-    box-shadow: inset 0 0 5px var(--bg-secondary);
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: var(--bg-primary);
-    box-shadow: inset 0 0 5px var(--font-white-color);
 }
 
 /** ---------- Space Style ---------- */
@@ -53,6 +29,30 @@ p {
     height: 150px;
 }
 
+/** ----- Scroll Style ----- */
+// ::-webkit-scrollbar {
+//     width: 10px;
+//     background: var(--font-white-color);
+// }
+
+// Track 
+// ::-webkit-scrollbar-track {
+//     background: transparent;
+//     box-shadow: inset 0 0 5px var(--bg-secondary);
+// }
+
+// Handle
+// ::-webkit-scrollbar-thumb {
+//     background: var(--bg-primary);
+//     box-shadow: inset 0 0 5px var(--bg-secondary);
+// }
+
+// Handle on hover
+// ::-webkit-scrollbar-thumb:hover {
+//     background: var(--bg-primary);
+//     box-shadow: inset 0 0 5px var(--font-white-color);
+// }
+
 /** ----- TabGroup Style ----- */
 .tabgroup__item__container {
     @include tabgroup__item__common(top, var(--font-primary), to bottom, right);
@@ -66,16 +66,15 @@ p {
         );
     }
 }
-
 .tabgroup__item__container__reverse {
     @include tabgroup__item__common(bottom, var(--font-third), to top, right);
 }
 
 /** ----- ScrollTopButton Style ----- */
-.scroll-to-top {
+.scroll__to__top {
     position: relative;
 
-    .icon-style {
+    .icon__style {
         position: fixed;
         bottom: 40px;
         right: 40px;
@@ -109,4 +108,9 @@ p {
             transform: translateY(0px);
         }
     }
+}
+
+/** ----- JoinUsButton Style ----- */
+.join__us {
+
 }

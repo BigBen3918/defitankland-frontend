@@ -11,14 +11,15 @@ import AOS from "aos";
 
 /** ---------- Begin Pages ---------- */
 // main pages
-import Home from "./pages/dashboard/home";
-import DFTL from "./pages/dftl/dftl";
-import Notfound from "./pages/notfound";
+import Home from "./pages/dashboard";
+import DFTL from "./pages/dftl";
+import Notfound from "./pages/NotFound";
 
 // Layouts
 import Header from "./components/layouts/header";
 import Footer from "./components/layouts/footer";
-import ScrollToTop from "./components/layouts/ScrollButton";
+// import ScrollToTop from "./components/layouts/ScrollButton";
+import JoinButton from "./components/layouts/JoinButton";
 /** ---------- End Pages ---------- */
 
 /** Begin SCSS Style */
@@ -60,7 +61,7 @@ export default function App() {
                     {/* Not Found */}
                     <Route path="*" element={<Notfound />} />
                 </Routes>
-                <ScrollToTop />
+                <JoinButton />
             </Router>
         </Provider>
     );
