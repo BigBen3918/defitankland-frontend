@@ -10,7 +10,7 @@ import { howWork } from "./components/mocks/howwork";
 import { news } from "./components/mocks/news";
 import { partners } from "./components/mocks/partners";
 import { ScrollLink, ScrollElement } from "../../components/ScrollEvent";
-import TabGroup from "../../components/TabGroup";
+import TabGroup from "../../components/tabgroup";
 
 export default function Home() {
     return (
