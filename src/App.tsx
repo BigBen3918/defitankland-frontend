@@ -13,7 +13,7 @@ import AOS from "aos";
 // main pages
 import Home from "./pages/dashboard";
 import DFTL from "./pages/dftl";
-import Notfound from "./pages/notFound";
+import Notfound from "./pages/NotFound";
 
 // Layouts
 import Header from "./components/layouts/header";
