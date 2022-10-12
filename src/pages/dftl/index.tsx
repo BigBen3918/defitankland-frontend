@@ -4,7 +4,7 @@ import { FaUsers, FaRecycle, FaCoins } from "react-icons/fa";
 import Concepts from "./components/concepts";
 import { concepts } from "./components/mocks/concept";
 import { ScrollElement } from "../../components/ScrollEvent";
-import TabGroup from "../../components/tabGroup";
+import TabGroup from "../../components/tabgroup";
 
 export default function DFTL() {
     useEffect(() => {
