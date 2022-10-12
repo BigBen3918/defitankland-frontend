@@ -10,28 +10,4 @@ export const partners = [
     {
         image: card,
     },
-    {
-        image: card,
-    },
-    {
-        image: card,
-    },
-    {
-        image: card,
-    },
-    {
-        image: card,
-    },
-    {
-        image: card,
-    },
-    {
-        image: card,
-    },
-    {
-        image: card,
-    },
-    {
-        image: card,
-    },
 ];

@@ -1,18 +1,26 @@
+import { useEffect } from "react";
 import { BsFillBookmarksFill, BsStack } from "react-icons/bs";
 import { FaUsers, FaRecycle, FaCoins } from "react-icons/fa";
 import Concepts from "./components/concepts";
 import { concepts } from "./components/mocks/concept";
 import { ScrollElement } from "../../components/ScrollEvent";
-import TabGroup from "../../components/tabgroup";
+import TabGroup from "../../components/tabGroup";
 
 export default function DFTL() {
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    }, []);
+
     return (
         <div className="dftl">
             {/* Begin Intro */}
             <ScrollElement to="dftl_intro">
                 <div className="intro">
                     <div className="back__effect">
-                        <div data-aos="zoom-in" data-aos-once="true">
+                        <div>
                             <h1>Defi Tank Land Token (DFTL)</h1>
                             <h4>
                                 DFTL is a utility token in the DefiTankLand
@@ -30,16 +38,11 @@ export default function DFTL() {
                 <div className="container">
                     <div className="concept">
                         <div className="spacer-double"></div>
-                        <span data-aos="zoom-in" data-aos-once="true">
+                        <span>
                             <h2>What is DFTL and what makes us storng</h2>
                         </span>
                         <div className="spacer-triple"></div>
-                        <div
-                            className="row j-center"
-                            data-aos="fade-down"
-                            data-aos-delay="300"
-                            data-aos-once="true"
-                        >
+                        <div className="row j-center">
                             {concepts.map((item: any, index: number) => (
                                 <div className="col-sm-4" key={index}>
                                     <Concepts
@@ -60,16 +63,13 @@ export default function DFTL() {
                 <div className="ecosystem">
                     <div className="container">
                         <div className="spacer-double"></div>
-                        <span data-aos="zoom-in" data-aos-once="true">
+                        <span>
                             <h2>Token Ecosystem</h2>
                         </span>
                         <div className="spacer-double"></div>
                         <img
                             src={require("../../assets/images/ecosystem.webp")}
                             alt=""
-                            data-aos="zoom-out-up"
-                            data-aos-delay="500"
-                            data-aos-once="true"
                         />
                         <div className="spacer-triple"></div>
                     </div>
@@ -80,12 +80,7 @@ export default function DFTL() {
                 <div className="stake">
                     <div className="container">
                         <div className="spacer-triple"></div>
-                        <div
-                            className="row"
-                            data-aos="zoom-in-down"
-                            data-aos-delay="700"
-                            data-aos-once="true"
-                        >
+                        <div className="row">
                             <div className="col-sm-4">
                                 <TabGroup
                                     title={"Token Price"}
@@ -115,12 +110,7 @@ export default function DFTL() {
                         </div>
                         <div className="spacer-double"></div>
                         <div className="row m0 j-center j-middle">
-                            <div
-                                className="col-sm-6"
-                                data-aos="fade-right"
-                                data-aos-delay="700"
-                                data-aos-once="true"
-                            >
+                            <div className="col-sm-6">
                                 <div className="staking__content">
                                     <span>
                                         <h2>Staking DFTL</h2>
@@ -141,12 +131,7 @@ export default function DFTL() {
                                 </div>
                                 <div className="spacer-single"></div>
                             </div>
-                            <div
-                                className="col-sm-6"
-                                data-aos="fade-left"
-                                data-aos-delay="700"
-                                data-aos-once="true"
-                            >
+                            <div className="col-sm-6">
                                 <img
                                     className="apy__diagram"
                                     src={require("../../assets/images/apy.webp")}
@@ -164,16 +149,11 @@ export default function DFTL() {
                 <div className="stake__metrix">
                     <div className="container">
                         <div className="spacer-single"></div>
-                        <span data-aos="zoom-in" data-aos-once="true">
+                        <span>
                             <h2>Stake Metrix</h2>
                         </span>
                         <div className="spacer-triple"></div>
-                        <div
-                            className="row"
-                            data-aos="zoom-in-down"
-                            data-aos-delay="1000"
-                            data-aos-once="true"
-                        >
+                        <div className="row">
                             <div className="col-sm-4">
                                 <TabGroup
                                     title={"Token Pool Price"}
@@ -209,7 +189,7 @@ export default function DFTL() {
             <ScrollElement to="available">
                 <div className="available">
                     <div className="container">
-                        <span data-aos="zoom-in" data-aos-once="true">
+                        <span>
                             <h2>DFTL Available on</h2>
                         </span>
                         <div className="links">

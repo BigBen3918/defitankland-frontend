@@ -13,7 +13,7 @@ import AOS from "aos";
 // main pages
 import Home from "./pages/dashboard";
 import DFTL from "./pages/dftl";
-import Notfound from "./pages/notfound";
+import Notfound from "./pages/notFound";
 
 // Layouts
 import Header from "./components/layouts/header";
@@ -24,7 +24,7 @@ import JoinButton from "./components/layouts/JoinButton";
 
 /** Begin SCSS Style */
 import "./assets/styles/index.scss";
-import "aos/dist/aos.css";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 /** End SCSS Style */
 
 interface Props {
@@ -44,10 +44,6 @@ const PrivateRoute: React.FC<Props> = ({ component: RouteComponent }) => {
 };
 
 export default function App() {
-    AOS.init({
-        duration: 1200,
-    });
-
     return (
         <Provider>
             <Router>

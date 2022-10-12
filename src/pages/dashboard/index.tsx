@@ -1,8 +1,8 @@
 import { GiTank } from "react-icons/gi";
 import { BsFillBookmarksFill } from "react-icons/bs";
 import { FaUsers } from "react-icons/fa";
+import { Carousel } from "react-responsive-carousel";
 
-import GameMode from "./components/gamemode";
 import HowWork from "./components/howwork";
 import News from "./components/news";
 import { gamemode } from "./components/mocks/gamemode";
@@ -10,16 +10,25 @@ import { howWork } from "./components/mocks/howwork";
 import { news } from "./components/mocks/news";
 import { partners } from "./components/mocks/partners";
 import { ScrollLink, ScrollElement } from "../../components/ScrollEvent";
-import TabGroup from "../../components/tabgroup";
+import TabGroup from "../../components/tabGroup";
+import { useEffect } from "react";
+import { FadeUp } from "../../components/animTag";
 
 export default function Home() {
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    }, []);
+
     return (
         <div className="dashboard">
             {/* Begin Intro */}
             <ScrollElement to="introduce">
                 <div className="intro">
                     <div className="back__effect">
-                        <div data-aos="zoom-in" data-aos-once="true">
+                        <FadeUp>
                             <h1>DefiTankLand</h1>
                             <div>
                                 <h3>
@@ -27,9 +36,9 @@ export default function Home() {
                                     with NFT tanks
                                 </h3>
                             </div>
-                        </div>
+                        </FadeUp>
 
-                        <span></span>
+                        <div className="effect"></div>
                         <ScrollLink to="howitwork">
                             <button>
                                 <img
@@ -46,17 +55,13 @@ export default function Home() {
             <ScrollElement to="metrix">
                 <div className="metrix">
                     <div className="container">
-                        <span data-aos="zoom-in" data-aos-once="true">
+                        <FadeUp>
                             <h2>Metrix</h2>
-                        </span>
+                        </FadeUp>
                         <div className="spacer-triple"></div>
+                        <div className="spacer-double"></div>
                         <div className="row">
-                            <div
-                                className="col-sm-4"
-                                data-aos="fade-down"
-                                data-aos-delay="300"
-                                data-aos-once="true"
-                            >
+                            <div className="col-sm-4">
                                 <TabGroup
                                     title={"Token Price"}
                                     content={"1010"}
@@ -64,12 +69,7 @@ export default function Home() {
                                     classname={"tabgroup__item__container"}
                                 />
                             </div>
-                            <div
-                                className="col-sm-4"
-                                data-aos="fade-up"
-                                data-aos-delay="300"
-                                data-aos-once="true"
-                            >
+                            <div className="col-sm-4">
                                 <TabGroup
                                     title={"Total Tanks"}
                                     content={"1010"}
@@ -79,12 +79,7 @@ export default function Home() {
                                     }
                                 />
                             </div>
-                            <div
-                                className="col-sm-4"
-                                data-aos="fade-down"
-                                data-aos-delay="300"
-                                data-aos-once="true"
-                            >
+                            <div className="col-sm-4">
                                 <TabGroup
                                     title={"Token Players"}
                                     content={"1010"}
@@ -93,13 +88,9 @@ export default function Home() {
                                 />
                             </div>
                         </div>
-                        <div className="spacer-single"></div>
+                        <div className="spacer-triple"></div>
+                        <div className="spacer-double"></div>
                     </div>
-
-                    <img
-                        src={require("../../assets/images/icon2.webp")}
-                        alt=""
-                    />
                 </div>
             </ScrollElement>
 
@@ -107,16 +98,11 @@ export default function Home() {
             <ScrollElement to="howitwork">
                 <div className="howitwork">
                     <div className="container">
-                        <span data-aos="zoom-in" data-aos-once="true">
+                        <FadeUp>
                             <h2>How It Works</h2>
-                        </span>
+                        </FadeUp>
                         <div className="spacer-double"></div>
-                        <div
-                            className="row j-center j-middle"
-                            data-aos="zoom-in-down"
-                            data-aos-delay="500"
-                            data-aos-once="true"
-                        >
+                        <div className="row j-center j-middle">
                             {howWork.map((item: any, index: number) => (
                                 <div className="col-sm-3" key={index}>
                                     <HowWork
@@ -129,11 +115,6 @@ export default function Home() {
                             ))}
                         </div>
                     </div>
-
-                    <img
-                        src={require("../../assets/images/icon1.webp")}
-                        alt=""
-                    />
                 </div>
             </ScrollElement>
 
@@ -142,35 +123,37 @@ export default function Home() {
                 <div className="gamemode">
                     <div className="container">
                         <div className="spacer-single"></div>
-                        <span data-aos="zoom-in" data-aos-once="true">
+                        <FadeUp>
                             <h2>Game Mode</h2>
-                        </span>
+                        </FadeUp>
                         <div className="spacer-single"></div>
-                        <div
-                            className="row j-center j-around"
-                            data-aos="zoom-in-down"
-                            data-aos-delay="700"
-                            data-aos-once="true"
-                        >
-                            {gamemode.map((item: any, index: number) => (
-                                <div className="col-sm-4" key={index}>
-                                    <GameMode
-                                        image={item.image}
-                                        content={item.content}
-                                    />
-                                    <div className="spacer-single"></div>
-                                </div>
-                            ))}
+                        <div className="row j-center j-around slide_image">
+                            <Carousel
+                                autoPlay
+                                emulateTouch
+                                infiniteLoop
+                                showArrows
+                                showStatus={false}
+                                showThumbs
+                                showIndicators
+                            >
+                                {gamemode.map((item: any, index: number) => (
+                                    <div className="how_to_item" key={index}>
+                                        <img
+                                            src={item.image}
+                                            alt=""
+                                            key={index}
+                                            style={{ zIndex: 1 }}
+                                        />
+                                        <h2>{item.content}</h2>
+                                    </div>
+                                ))}
+                            </Carousel>
                         </div>
+                        <span className="light_top"></span>
+                        <span className="light_bottom"></span>
+                        <div className="spacer-double"></div>
                     </div>
-                    <span className="light_top"></span>
-                    <span className="light_bottom"></span>
-                    <img
-                        src={require("../../assets/images/icon2.webp")}
-                        alt=""
-                        className="icon"
-                    />
-                    <div className="spacer-double"></div>
                 </div>
             </ScrollElement>
 
@@ -178,16 +161,11 @@ export default function Home() {
             <ScrollElement to="news">
                 <div className="news">
                     <div className="container">
-                        <span data-aos="zoom-in" data-aos-once="true">
+                        <FadeUp>
                             <h2>News</h2>
-                        </span>
+                        </FadeUp>
                         <div className="spacer-double"></div>
-                        <div
-                            className="row j-center j-around"
-                            data-aos="fade-down"
-                            data-aos-delay="1000"
-                            data-aos-once="true"
-                        >
+                        <div className="row j-center j-around">
                             {news.map((item: any, index: number) => (
                                 <div className="col-sm-4" key={index}>
                                     <News
@@ -208,16 +186,11 @@ export default function Home() {
             <ScrollElement to="partner">
                 <div className="partner">
                     <div className="container">
-                        <span data-aos="zoom-in" data-aos-once="true">
+                        <FadeUp>
                             <h2>Our Partners</h2>
-                        </span>
+                        </FadeUp>
                         <div className="spacer-double"></div>
-                        <div
-                            className="row j-center j-around"
-                            data-aos="zoom-out-up"
-                            data-aos-delay="1200"
-                            data-aos-once="true"
-                        >
+                        <div className="row j-center j-around">
                             {partners.map((item: any, index: number) => (
                                 <div className="col-sm-4" key={index}>
                                     <div className="partner__item">

@@ -173,7 +173,7 @@
 
     .ecosystem {
         position: relative;
-        background-color: #f3903a;
+        background-color: #ac570d;
         background-image: url("../../images/dftl_bg_2.webp");
         background-size: cover;
         background-repeat: no-repeat;
@@ -205,6 +205,7 @@
             padding: 20px;
 
             .light_top {
+                z-index: -1;
                 position: absolute;
                 top: 20%;
                 left: 0;
@@ -214,6 +215,7 @@
             }
 
             .light_bottom {
+                z-index: -1;
                 position: absolute;
                 bottom: 10%;
                 right: 0;
