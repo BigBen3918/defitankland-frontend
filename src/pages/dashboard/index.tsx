@@ -12,7 +12,7 @@ import { partners } from "./components/mocks/partners";
 import { ScrollLink, ScrollElement } from "../../components/ScrollEvent";
 import TabGroup from "../../components/tabgroup";
 import { useEffect } from "react";
-import { FadeUp } from "../../components/animTag";
+import { FadeUp } from "../../components/animtag";
 
 export default function Home() {
     useEffect(() => {
