@@ -67,7 +67,7 @@ export default function Header() {
                             <div className="col-4 pr0">
                                 <div className="row m0 j-center j-middle">
                                     <div className="col-6">
-                                        <a href="/#">
+                                        <a href="https://pdfhost.io/v/cJxtGQMgy_DFTL_Draft">
                                             <p>Whitepaper</p>
                                         </a>
                                     </div>
@@ -121,7 +121,7 @@ const MenuItem = (props: any) => {
                     </Link>
                 </li>
                 <li>
-                    <a href="/#">
+                    <a href="https://pdfhost.io/v/cJxtGQMgy_DFTL_Draft">
                         <h2>Whitepaper</h2>
                     </a>
                 </li>
